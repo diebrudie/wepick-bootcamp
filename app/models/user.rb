@@ -15,8 +15,8 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
-  validates :username, presence: { strict: true }, uniqueness: { case_sensitive: false }
-  validates :email, presence: { strict: true }, uniqueness: { case_sensitive: false}
+  validates :username, presence: { strict: true }, uniqueness: { case_sensitive: false }, length: { in: 6..20 }
+  validates :email, presence: { strict: true }, uniqueness: { case_sensitive: false }, length: { in: 6..20 }
   validates :first_name, presence: { strict: true }
   validates :last_name, presence: { strict: true }
 

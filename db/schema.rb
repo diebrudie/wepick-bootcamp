@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_31_100719) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_31_144833) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,14 +54,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_100719) do
 
   create_table "activities", force: :cascade do |t|
     t.string "title"
-    t.string "type"
     t.date "activity_date"
     t.date "deadline_date"
     t.boolean "anonymity", default: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "activity_type"
+    t.string "description"
     t.index ["user_id"], name: "index_activities_on_user_id"
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.bigint "asker_id", null: false
+    t.bigint "receiver_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["asker_id"], name: "index_friendships_on_asker_id"
+    t.index ["receiver_id"], name: "index_friendships_on_receiver_id"
   end
 
   create_table "participants", force: :cascade do |t|
@@ -99,11 +109,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_100719) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "proposal_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["proposal_id"], name: "index_votes_on_proposal_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "activities", "users"
+  add_foreign_key "friendships", "users", column: "asker_id"
+  add_foreign_key "friendships", "users", column: "receiver_id"
   add_foreign_key "participants", "activities"
   add_foreign_key "participants", "users"
   add_foreign_key "proposals", "activities"
   add_foreign_key "proposals", "users"
+  add_foreign_key "votes", "proposals"
+  add_foreign_key "votes", "users"
 end
