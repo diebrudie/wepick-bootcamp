@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :profiles
+  resources :profiles, only: %i[show edit update]
   get "friends", to: "friendships#show_friends"
   resources :activities do
     resources :participants, only: :create
