@@ -8,9 +8,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  get "friends", to: "friends#show"
+  resources :profiles
+  get "friends", to: "friendship#show_friends"
   resources :activities do
-    resources :proposals, only: %i[index show new create] do
+    resources :participants, only: :create
+    resources :proposals, only: %i[index show new create edit update] do
       resources :votes, only: %i[create]
     end
   end
