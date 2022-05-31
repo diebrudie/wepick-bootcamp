@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'friends/show'
+  get 'friends/hola'
   get 'participants/create'
   devise_for :users
   root to: "pages#home"
@@ -6,4 +8,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :profiles, only: %i[show edit update]
+  get "friends", to: "friendships#show_friends"
+  resources :activities do
+    resources :participants, only: :create
+    resources :proposals, only: %i[index show new create edit update] do
+      resources :votes, only: %i[create]
+    end
+  end
+  resources :proposals, only: :destroy
 end
