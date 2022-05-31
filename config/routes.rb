@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'friends/show'
+  get 'friends/hola'
   get 'participants/create'
   devise_for :users
   root to: "pages#home"
@@ -6,7 +8,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-
+  get "friends", to: "friends#show"
   resources :activities do
     resources :proposals, only: %i[index show new create] do
       resources :votes, only: %i[create]
