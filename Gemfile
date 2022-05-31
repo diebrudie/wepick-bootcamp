@@ -5,7 +5,6 @@ ruby "3.0.3"
 gem "pundit"
 gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
-gem 'acts_as_votable'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"
