@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+
 puts "Destroying users..."
 User.destroy_all
 
@@ -283,3 +284,4 @@ activity14.photo.attach(io: file, filename: "circus.jpeg", content_type: "image/
 activity14.save
 
 puts "Finished creating activities!"
+
