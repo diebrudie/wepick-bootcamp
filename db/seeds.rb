@@ -378,7 +378,7 @@ proposal10 = Proposal.new(
   description: 'Visually stunning. One of the best Sci-fi films in the last decade.'
 )
 
-proposal10.user = user1
+proposal10.user = user2
 proposal10.activity = activity3
 proposal10.save
 
@@ -387,7 +387,7 @@ proposal11 = Proposal.new(
   description: 'Americaaaaaaaaaaa! F yeah! Coming again to save the muh effing day yeah!'
 )
 
-proposal11.user = user1
+proposal11.user = user3
 proposal11.activity = activity3
 proposal11.save
 
@@ -396,8 +396,82 @@ proposal12 = Proposal.new(
   description: 'Shout out to all the period drama lovers!'
 )
 
-proposal12.user = user1
+proposal12.user = user4
 proposal12.activity = activity3
 proposal12.save
 
 puts "Finished creating proposals!"
+
+puts "Destroying participants..."
+Participant.destroy_all
+
+puts "Creating participants..."
+
+user_array = [user1, user2, user3, user4]
+
+user_array.each do |user|
+  participant1 = Participant.new
+  participant1.user = user
+  participant1.activity = activity1
+
+  participant2 = Participant.new
+  participant2.user = user
+  participant2.activity = activity2
+
+  participant3 = Participant.new
+  participant3.user = user
+  participant3.activity = activity3
+
+  participant4 = Participant.new
+  participant4.user = user
+  participant4.activity = activity4
+
+  participant5 = Participant.new
+  participant5.user = user
+  participant5.activity = activity5
+
+  participant6 = Participant.new
+  participant6.user = user
+  participant6.activity = activity6
+
+  participant7 = Participant.new
+  participant7.user = user
+  participant7.activity = activity7
+
+  participant8 = Participant.new
+  participant8.user = user
+  participant8.activity = activity8
+end
+
+puts "Finished creating participants!"
+
+puts "Destroying friendships..."
+Friendship.destroy_all
+
+puts "Creating friendships..."
+
+friendship1 = Friendship.new
+friendship1.asker_id = 1
+friendship1.reciever_id = 2
+
+friendship2 = Friendship.new
+friendship2.asker_id = 1
+friendship2.reciever_id = 3
+
+friendship3 = Friendship.new
+friendship3.asker_id = 1
+friendship3.reciever_id = 4
+
+friendship4 = Friendship.new
+friendship4.asker_id = 2
+friendship4.reciever_id = 3
+
+friendship5 = Friendship.new
+friendship5.asker_id = 2
+friendship5.reciever_id = 4
+
+friendship5 = Friendship.new
+friendship5.asker_id = 3
+friendship5.reciever_id = 4
+
+puts "Finished creating friendships!"
