@@ -285,3 +285,5 @@ activity14.save
 
 puts "Finished creating activities!"
 
+# TIME FOR SOME MUHFUCKIN PROPOSALS
+
