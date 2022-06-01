@@ -1,4 +1,14 @@
-<h1>Friends#show</h1>
-<p>Find me in app/views/friends/show.html.erb</p>
-<h2>this is the ammount of friends -><%=@friendships.count %></h2>
+<div>
 
+</div>
+
+<h1>Friends</h1>
+  <% @friendships.each do |friendship| %>
+    <ul>
+      <% if friendship.asker == current_user %>
+        <li>Username: <%= friendship.reciever.username %></li>
+      <% else %>
+        <li>Username: <%= friendship.asker.username %></li>
+      <% end %>
+    </ul>
+  <% end %>
