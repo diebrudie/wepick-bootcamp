@@ -287,3 +287,117 @@ puts "Finished creating activities!"
 
 # TIME FOR SOME MUHFUCKIN PROPOSALS
 
+puts "Destroying proposals..."
+Proposal.destroy_all
+
+puts "Creating proposals..."
+
+proposal1 = Proposal.new(
+  title: 'Hasenheide',
+  description: 'I really love dangerous parks full of drug dealers. '
+)
+
+proposal1.user = user1
+proposal1.activity = activity1
+proposal1.save
+
+proposal2 = Proposal.new(
+  title: 'Tiergarten',
+  description: '<p>Easily the most beautiful park in Berlin.</p> '
+)
+
+proposal2.user = user2
+proposal2.activity = activity1
+proposal2.save
+
+proposal3 = Proposal.new(
+  title: 'Volkspark Friedrichshain',
+  description: ' No tourists in this park and it has volleyball courts! '
+)
+
+proposal3.user = user3
+proposal3.activity = activity1
+proposal3.save
+
+proposal4 = Proposal.new(
+  title: 'Gorlitzer Park',
+  description: 'Ugly but such a good location. '
+)
+
+proposal4.user = user4
+proposal4.activity = activity1
+proposal4.save
+
+proposal5 = Proposal.new(
+  title: 'Hire a DJ and self-cater',
+  description: 'We can bring our own drinks and turntables/speakers'
+)
+
+proposal5.user = user1
+proposal5.activity = activity2
+proposal5.save
+
+proposal6 = Proposal.new(
+  title: 'Inflatable animals and games',
+  description: 'Lets bring blow up toys and stop for swimming breaks along the way'
+)
+
+proposal6.user = user2
+proposal6.activity = activity2
+proposal6.save
+
+proposal7 = Proposal.new(
+  title: 'I want to go to the baltic sea',
+  description: 'It would be so nice!'
+)
+
+proposal7.user = user3
+proposal7.activity = activity2
+proposal7.save
+
+proposal8 = Proposal.new(
+  title: 'Hire a cocktail maker',
+  description: 'There are barmen who you can hire to do all the work of making drinks. We just graduated so we deserve it'
+)
+
+proposal8.user = user4
+proposal8.activity = activity2
+proposal8.save
+
+proposal9 = Proposal.new(
+  title: 'Batman',
+  description: 'A nice twist on a classic. Great cast too!'
+)
+
+proposal9.user = user1
+proposal9.activity = activity3
+proposal9.save
+
+proposal10 = Proposal.new(
+  title: 'Dune',
+  description: 'Visually stunning. One of the best Sci-fi films in the last decade.'
+)
+
+proposal10.user = user1
+proposal10.activity = activity3
+proposal10.save
+
+proposal11 = Proposal.new(
+  title: 'Top Gun: Maverick',
+  description: 'Americaaaaaaaaaaa! F yeah! Coming again to save the muh effing day yeah!'
+)
+
+proposal11.user = user1
+proposal11.activity = activity3
+proposal11.save
+
+proposal12 = Proposal.new(
+  title: 'Downton Abbey: A New Era',
+  description: 'Shout out to all the period drama lovers!'
+)
+
+proposal12.user = user1
+proposal12.activity = activity3
+proposal12.save
+
+puts "Finished creating proposals!"

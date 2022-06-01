@@ -85,7 +85,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_144833) do
 
   create_table "proposals", force: :cascade do |t|
     t.string "title"
-    t.integer "votes"
+    t.integer "votes", default: 0
     t.bigint "user_id", null: false
     t.bigint "activity_id", null: false
     t.datetime "created_at", null: false
