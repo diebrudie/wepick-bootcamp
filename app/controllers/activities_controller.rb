@@ -2,13 +2,13 @@ class ActivitiesController < ApplicationController
   before_action :find_activity, only: %i[show edit destroy]
 
   def index
-    @activities = Activity.all
+    #@activities = Activity.all
+    @activities_user = Activity.all.where("user_id = #{current_user.id}")
     @activity = Activity.new
   end
 
   def show
     @activity = Activity.find(params[:id])
-    @proposals = @activity.proposals
   end
 
   def new
@@ -31,4 +31,13 @@ class ActivitiesController < ApplicationController
     params.require(:activity).permit(:title, :activity_date, :deadline_date, :anonymity, :activity_type, :description)
   end
 
+end
+
+def create
+  @activity = Activity.find(params[:activity_id])
+  @proposal = Proposal.new(proposal_params)
+  @proposal.activity = @activity
+  @proposal.user = current_user
+  @proposal.save!
+  redirect_to activity_path(@activity)
 end
