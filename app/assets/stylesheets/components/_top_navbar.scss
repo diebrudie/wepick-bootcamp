@@ -1,0 +1,25 @@
+@media screen and (max-width: 479px) {
+  .brand {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: auto;
+    display: flex;
+    height: 50px;
+    padding-right: 0px;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(156, 171, 194, 0.35);
+    background-color: #fff;
+  }
+
+  .brand__logo {
+    height: 100%;
+  }
+
+  .brand__link {
+    position: relative;
+    height: 65%;
+  }
+}
