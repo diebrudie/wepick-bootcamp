@@ -1,36 +1,35 @@
 
-
-
+<div data-controller="activity-form">
 <section class="section">
-    <div class="l-container">
-      <div class="index-act">
-        <div class="top-elements">
-          <div class="top-elements__back-done">
-            <a href="#" class="top-elements__btn-left w-inline-block">
-              <%= image_tag "icon-search.svg", alt: "search icon", class: "top-elements__icon", loading: "lazy" %>
-            </a>
-            <a href="#" class="top-elements__btn is--create-act w-inline-block">
-              <%= image_tag "icon-create-02-grey.svg", alt: "create activity", class: "top-elements__btn-icon", loading: "lazy" %>
-              <div class="top-elements__btn-text">Create new</div>
-            </a>
-          </div>
-          <div class="top-elements__title">Activity Index</div>
+  <div class="l-container">
+    <div class="index-act">
+      <div class="top-elements">
+        <div class="top-elements__back-done">
+          <a href="#" class="top-elements__btn-left w-inline-block">
+            <%= image_tag "icon-search.svg", alt: "search icon", class: "top-elements__icon", loading: "lazy" %>
+          </a>
+          <a href="#" class="top-elements__btn is--create-act w-inline-block" data-action="click->activity-form#openForm">
+            <%= image_tag "icon-create-02-grey.svg", alt: "create activity", class: "top-elements__btn-icon", loading: "lazy" %>
+            <div class="top-elements__btn-text">Create new</div>
+          </a>
         </div>
-        <div class="activities">
-          <% @activities.each do |activity| %>
-
-              <%= link_to activity_path(activity), class:"activities__box" do %>
-                  <div class="activities__img-wrp">
-                    <img src="activities/cinema.jpeg" loading="lazy" alt="" class="activities__img">
-                  </div>
-                  <div class="activities__content-wrp">
-                    <div class="activities__title"><%= activity.title %></div>
-                    <div class="activities__date"><%= activity.activity_date.strftime('%A, %d %B %Y') %></div>
-                  </div>
-              <% end %>
-
-          <% end %>
-        </div>
+        <div class="top-elements__title">Activity Index</div>
+      </div>
+      <div class="activities">
+        <% @activities.each do |activity| %>
+            <%= link_to activity_path(activity), class:"activities__box" do %>
+                <div class="activities__img-wrp">
+                  <%= cl_image_tag(activity.photo.key, alt: "activity image", class: "activities__img", loading: "lazy") %>
+                </div>
+                <div class="activities__content-wrp">
+                  <div class="activities__title"><%= activity.title %></div>
+                  <div class="activities__date"><%= activity.activity_date.strftime('%A, %d %B %Y') %></div>
+                </div>
+            <% end %>
+        <% end %>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+<%= render "form_activity", activity: @activity %>
+</div>

@@ -1,0 +1,71 @@
+<div class="form-activity">
+  <div class="l-container is--min-100vh is--act-form">
+    <div class="top-elements">
+      <div class="top-elements__back-done">
+        <a href="#" class="top-elements__btn-left is--back-act-new w-inline-block" data-action="click->activity-form#closeForm">
+          <%= image_tag "icon-arrow-back.svg", alt: "back button", class: "top-elements__icon", loading: "lazy" %>
+        </a>
+        <a href="#" class="top-elements__btn is--act-done w-inline-block">
+          <div>Done</div>
+        </a>
+      </div>
+      <div class="top-elements__title">Create new Activity</div>
+    </div>
+
+    <div class="form-act">
+      <div class="form-act__img-n-name">
+        <div class="form-act__img-circle">
+          <%= image_tag "icon-camera-01.svg", alt: "image upload", loading: "lazy" %>
+        </div>
+        <div class="form-act__name">Very long activity name</div>
+      </div>
+      <div class="form-act__description">
+        <div class="form-act__label">Description</div>
+        <div class="form-act__field">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commod</div>
+      </div>
+      <div class="form-act__dates">
+        <div class="form-act__date-wrp">
+          <div class="form-act__date-title">Activity date</div>
+          <div class="form-act__date-box">
+            <div class="form-act__date-square"></div>
+            <div class="form-act__date-square"></div>
+            <div class="form-act__date-square"></div>
+          </div>
+          <div class="form-act__date-full">02. November 2020</div>
+        </div>
+        <div class="form-act__date-wrp is--right">
+          <div class="form-act__date-title">Voting due date *</div>
+          <div class="form-act__date-box">
+            <div class="form-act__date-square"></div>
+            <div class="form-act__date-square"></div>
+            <div class="form-act__date-square"></div>
+          </div>
+          <div class="form-act__date-full">02. November 2020</div>
+        </div>
+      </div>
+      <div class="form-act__toggle-wrp">
+        <div class="form-act__toggle-row">
+          <div class="form-act__tottle-text">Make proposals anonymous</div>
+          <div class="toggle">
+            <div class="toggle__fill"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="form-act">
+  <%= simple_form_for activity do |a| %>
+    <div class="form-act__img-n-name">
+      <div class="form-act__img-circle">
+        <%= a.input :photo, as: :file, class: "form-act__img-circle", label: false %>
+        <%= image_tag "icon-camera-01.svg", alt: "image upload", loading: "lazy" %>
+      </div>
+      <div class="form-act__name">
+        <%= a.input_field :title, class: "form-act__name" %>
+      </div>
+    </div>
+    <%= a.button :submit, class: "top-elements__btn is--act-done w-inline-block" %>
+  <% end %>
+</div>
+  </div>
+</div>
