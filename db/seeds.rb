@@ -460,32 +460,32 @@ puts "Creating friendships..."
 
 friendship1 = Friendship.new
 friendship1.asker_id = 1
-friendship1.reciever_id = 2
+friendship1.receiver_id = 2
 friendship1.save
 
 friendship2 = Friendship.new
 friendship2.asker_id = 1
-friendship2.reciever_id = 3
+friendship2.receiver_id = 3
 friendship2.save
 
 friendship3 = Friendship.new
 friendship3.asker_id = 1
-friendship3.reciever_id = 4
+friendship3.receiver_id = 4
 friendship3.save
 
 friendship4 = Friendship.new
 friendship4.asker_id = 2
-friendship4.reciever_id = 3
+friendship4.receiver_id = 3
 friendship4.save
 
 friendship5 = Friendship.new
 friendship5.asker_id = 2
-friendship5.reciever_id = 4
+friendship5.receiver_id = 4
 friendship5.save
 
 friendship6 = Friendship.new
 friendship6.asker_id = 3
-friendship6.reciever_id = 4
+friendship6.receiver_id = 4
 friendship6.save
 
 puts "Finished creating friendships!"

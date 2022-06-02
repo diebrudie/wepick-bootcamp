@@ -25,4 +25,9 @@ class ActivitiesController < ApplicationController
   def activity_params
     params.require(:activity).permit(:title, :activity_date, :deadline_date, :anonymity, :activity_type, :description)
   end
+
+  def show
+    @activity = Activity.find(params[:id])
+    @proposals = @activity.proposals
+  end
 end

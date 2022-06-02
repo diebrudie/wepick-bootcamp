@@ -1,1 +1,33 @@
-<h1>Activity show</h1>
+  <%= cl_image_tag(@activity.photo.key, width: 400, height: 300) %>
+
+<div class ="container">
+  <h1><%= @activity.title  %> </h1>
+  <div class ="d-flex justify-content-between">
+    <p>Happening on <%= @activity.activity_date.strftime('%b. %d. %y') %></p>
+    <p><%= rand(1..15)%> Participants</p>
+  </div>
+  <br>
+  <p><%= @activity.description %></p>
+  <br>
+  <div class = "d-flex justify-content-around">
+    <%= link_to "add proposal", new_activity_proposal_path(@activity) %>
+    <button class= "btn btn-light">Rearrange</button>
+    <button class= "btn btn-light">Close voting</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Votes</th>
+        </tr>
+    </thead>
+    <% @proposals.each do |proposal| %>
+      <tbody>
+        <tr>
+          <td><%=link_to proposal.title, activity_proposal_path(@activity, proposal) %></td>
+          <td><%= rand(1..15)  %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
