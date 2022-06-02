@@ -3,7 +3,7 @@ body {
   background-color: transparent;
   font-family: Poppins, sans-serif;
   color: #020202;
-  font-size: 1vw;
+  font-size: 1.0582010582010584vw;
   line-height: 1;
   font-weight: 400;
 }
@@ -78,12 +78,6 @@ h6 {
   font-weight: 400;
 }
 
-p {
-  margin-bottom: 0px;
-  font-size: 1.09em;
-  line-height: 1.45;
-}
-
 a {
   color: #222;
   font-size: 2em;
@@ -102,42 +96,11 @@ a, a:hover, a:active, a:visited {
   min-height: 100vh;
 }
 
-@media screen and (max-width: 991px) {
-  body {
-    font-size: 12px;
-  }
-
-  .l-container {
-    padding-right: 4vw;
-    padding-left: 4vw;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  h1 {
-    font-size: 3.2em;
-  }
-
-  h2 {
-    font-size: 2.75em;
-  }
-
-  h3 {
-    font-size: 2.25em;
-  }
-
-  p {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  .l-container {
-    padding-top: 3.45em;
-    padding-bottom: 3.45em;
-  }
-}
-
 @media screen and (max-width: 479px) {
+  body {
+  //  font-size: 12px;
+  }
+
   h1 {
     font-size: 6em;
   }
@@ -163,14 +126,80 @@ a, a:hover, a:active, a:visited {
   }
 
   p {
-    font-size: 4em;
+    margin-bottom: 0px;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   a {
     font-size: 4em;
   }
 
+  .l-container {
+    padding-right: 4vw;
+    padding-left: 4vw;
+    padding-top: 3.45em;
+    padding-top: 75px;
+  }
+
   .cta {
     font-size: 3.75em;
+  }
+
+  .top-elements {
+    position: relative;
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+
+  .top-elements__back-done {
+    display: flex;
+    height: 22px;
+    margin-bottom: 14em;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .top-elements__btn {
+    display: flex;
+    height: 100%;
+    padding-right: 0em;
+    padding-left: 1.6em;
+    justify-content: flex-end;
+    align-items: center;
+    color: $purple-main;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .top-elements__btn-left {
+    padding-right: 4.8em;
+    padding-bottom: 2em;
+  }
+
+  .top-elements__btn.is--create-act {
+    align-items: center;
+    color: #96959c;
+  }
+
+  .top-elements__btn.is--act-done {
+    font-size: 18px;
+  }
+
+  .top-elements__btn-icon {
+    margin-right: 5px;
+  }
+
+  .top-elements__btn-left {
+    padding-right: 4.8em;
+    padding-bottom: 2em;
+  }
+
+  .top-elements__title {
+    font-size: 6em;
+    font-weight: 500;
   }
 }
