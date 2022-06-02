@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "friends", to: "friendships#index", as: :friendships
   resources :activities do
     resources :participants, only: :create
-    resources :proposals, only: %i[index show new create edit update] do
+    resources :proposals, only: %i[show new create edit update] do
       post "vote_toggle", to: "votes#toggle", as: :vote_toggle
     end
   end

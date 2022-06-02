@@ -1,19 +1,31 @@
 class ProposalsController < ApplicationController
-  def index
-  end
-
   def show
+    @proposal = Proposal.find(params[:id])
+    @activity = Activity.find(params[:activity_id])
   end
 
   def new
+    @activity = Activity.find(params[:activity_id])
     @proposal = Proposal.new
-    @activity = Activity.first
   end
 
   def create
+    @activity = Activity.find(params[:activity_id])
     @proposal = Proposal.new(proposal_params)
+    @proposal.activity = @activity
+    @proposal.user = current_user
+    @proposal.save!
+    redirect_to activity_path(@activity)
   end
 
+  def destroy
+    @proposal = Proposal.find(params[:id])
+    @activity = @proposal.activity
+    @proposal.destroy
+
+    # No need for app/views/restaurants/destroy.html.erb
+    redirect_to activity_path(@activity), status: :see_other
+  end
   private
 
   def proposal_params

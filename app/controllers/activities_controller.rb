@@ -6,6 +6,11 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new
   end
 
+  def show
+    @activity = Activity.find(params[:id])
+    @proposals = @activity.proposals
+  end
+
   def new
     @activity = Activity.new
   end
@@ -25,4 +30,5 @@ class ActivitiesController < ApplicationController
   def activity_params
     params.require(:activity).permit(:title, :activity_date, :deadline_date, :anonymity, :activity_type, :description)
   end
+
 end
