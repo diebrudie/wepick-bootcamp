@@ -21,7 +21,7 @@
         <th scope="col">Votes</th>
         </tr>
     </thead>
-    <% @proposals.each do |proposal| %>
+    <% @activity.proposals.each do |proposal| %>
       <tbody>
         <tr>
           <td><%=link_to proposal.title, activity_proposal_path(@activity, proposal) %></td>
