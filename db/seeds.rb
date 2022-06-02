@@ -413,34 +413,42 @@ user_array.each do |user|
   participant1 = Participant.new
   participant1.user = user
   participant1.activity = activity1
+  participant1.save
 
   participant2 = Participant.new
   participant2.user = user
   participant2.activity = activity2
+  participant2.save
 
   participant3 = Participant.new
   participant3.user = user
   participant3.activity = activity3
+  participant3.save
 
   participant4 = Participant.new
   participant4.user = user
   participant4.activity = activity4
+  participant4.save
 
   participant5 = Participant.new
   participant5.user = user
   participant5.activity = activity5
+  participant5.save
 
   participant6 = Participant.new
   participant6.user = user
   participant6.activity = activity6
+  participant6.save
 
   participant7 = Participant.new
   participant7.user = user
   participant7.activity = activity7
+  participant7.save
 
   participant8 = Participant.new
   participant8.user = user
   participant8.activity = activity8
+  participant8.save
 end
 
 puts "Finished creating participants!"
@@ -453,25 +461,31 @@ puts "Creating friendships..."
 friendship1 = Friendship.new
 friendship1.asker_id = 1
 friendship1.reciever_id = 2
+friendship1.save
 
 friendship2 = Friendship.new
 friendship2.asker_id = 1
 friendship2.reciever_id = 3
+friendship2.save
 
 friendship3 = Friendship.new
 friendship3.asker_id = 1
 friendship3.reciever_id = 4
+friendship3.save
 
 friendship4 = Friendship.new
 friendship4.asker_id = 2
 friendship4.reciever_id = 3
+friendship4.save
 
 friendship5 = Friendship.new
 friendship5.asker_id = 2
 friendship5.reciever_id = 4
+friendship5.save
 
-friendship5 = Friendship.new
-friendship5.asker_id = 3
-friendship5.reciever_id = 4
+friendship6 = Friendship.new
+friendship6.asker_id = 3
+friendship6.reciever_id = 4
+friendship6.save
 
 puts "Finished creating friendships!"
