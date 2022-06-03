@@ -6,7 +6,7 @@
   <% @friendships.each do |friendship| %>
     <ul>
       <% if friendship.asker == current_user %>
-        <li>Username: <%= friendship.receiver.username %></li>
+        <li>Username: <%= link_to friendship.receiver.username, profile_path(frienship.receiver.id)%></li>
       <% else %>
         <li>Username: <%= link_to friendship.asker.username, profile_path(friendship.asker.id) %></li>
       <% end %>
