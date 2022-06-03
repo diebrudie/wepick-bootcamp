@@ -8,7 +8,7 @@
       <% if friendship.asker == current_user %>
         <li>Username: <%= friendship.receiver.username %></li>
       <% else %>
-        <li>Username: <%= friendship.asker.username %></li>
+        <li>Username: <%= link_to friendship.asker.username, profile_path(friendship.asker.id) %></li>
       <% end %>
     </ul>
   <% end %>
