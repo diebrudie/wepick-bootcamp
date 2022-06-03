@@ -16,7 +16,7 @@
         <div class="top-elements__title">Activity Index</div>
       </div>
       <div class="activities">
-        <% @activities.each do |activity| %>
+        <% @activities_user.each do |activity| %>
             <%= link_to activity_path(activity), class:"activities__box" do %>
                 <div class="activities__img-wrp">
                   <%= cl_image_tag(activity.photo.key, alt: "activity image", class: "activities__img", loading: "lazy") %>
@@ -32,4 +32,5 @@
   </div>
 </section>
 <%= render "form_activity", activity: @activity %>
+<%= render "shared/bottom_navbar" %>
 </div>
