@@ -1,1 +1,3 @@
-<%= current_user.email %>
+<%= cl_image_tag(@user.photo.key, alt: "activity image", class: "activities__img", loading: "lazy") %>
+<h1><%= @user.username %></h1>
+<h2>Email: </h2><%= @user.email %>
