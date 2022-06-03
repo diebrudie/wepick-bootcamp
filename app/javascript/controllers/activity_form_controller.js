@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="activity-form"
 export default class extends Controller {
-  static classes = [ "top-elements__btn.is--create-act" ]
+  static classes = ["top-elements__btn.is--create-act"]
 
   connect() {
     console.log('controller is connect')

@@ -11,13 +11,9 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
   end
 
-  def new
-    @activity = Activity.new
-  end
-
   def create
     @activity = Activity.new(activity_params)
-    @activity.user_id = current_user
+    @activity.user = current_user
     @activity.save!
     redirect_to activity_path(@activity)
   end
@@ -29,6 +25,6 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:title, :activity_date, :deadline_date, :anonymity, :activity_type, :description)
+    params.require(:activity).permit(:title, :activity_date, :deadline_date, :anonymity, :activity_type, :description, :photo)
   end
 end
