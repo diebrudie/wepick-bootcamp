@@ -6,7 +6,7 @@
   <% @friendships.each do |friendship| %>
     <ul>
       <% if friendship.asker == current_user %>
-        <li>Username: <%= friendship.reciever.username %></li>
+        <li>Username: <%= friendship.receiver.username %></li>
       <% else %>
         <li>Username: <%= friendship.asker.username %></li>
       <% end %>

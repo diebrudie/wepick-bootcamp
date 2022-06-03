@@ -67,11 +67,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_144833) do
 
   create_table "friendships", force: :cascade do |t|
     t.bigint "asker_id", null: false
-    t.bigint "reciever_id", null: false
+    t.bigint "receiver_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["asker_id"], name: "index_friendships_on_asker_id"
-    t.index ["reciever_id"], name: "index_friendships_on_reciever_id"
+    t.index ["receiver_id"], name: "index_friendships_on_receiver_id"
   end
 
   create_table "participants", force: :cascade do |t|
@@ -85,7 +85,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_144833) do
 
   create_table "proposals", force: :cascade do |t|
     t.string "title"
-    t.integer "votes"
+    t.integer "votes", default: 0
     t.bigint "user_id", null: false
     t.bigint "activity_id", null: false
     t.datetime "created_at", null: false
@@ -122,7 +122,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_144833) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "activities", "users"
   add_foreign_key "friendships", "users", column: "asker_id"
-  add_foreign_key "friendships", "users", column: "reciever_id"
+  add_foreign_key "friendships", "users", column: "receiver_id"
   add_foreign_key "participants", "activities"
   add_foreign_key "participants", "users"
   add_foreign_key "proposals", "activities"

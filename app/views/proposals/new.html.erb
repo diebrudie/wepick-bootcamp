@@ -1,0 +1,5 @@
+<%= simple_form_for([@activity, @proposal]) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description, as: :rich_text_area %>
+  <%= f.submit "Submit Proposal" %>
+<% end %>

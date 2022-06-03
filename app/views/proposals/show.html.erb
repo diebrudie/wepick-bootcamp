@@ -1,0 +1,10 @@
+<h1><%= @proposal.title %></h1>
+<br>
+<%= @proposal.description.to_plain_text %>
+<br>
+<br>
+<%= link_to "Activity", activity_path(@activity), class:"btn btn-light" %>
+<%= link_to "Delete",
+  proposal_path(@proposal),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
