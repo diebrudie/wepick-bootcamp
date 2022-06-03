@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-  before_action :find_activity, only: %i[show edit destroy]
+  before_action :find_activity, only: %i[show edit update destroy]
 
   def index
     #@activities = Activity.all
@@ -14,8 +14,21 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
     @activity.user = current_user
-    @activity.save!
+    if @activity.save!
+      redirect_to activity_path(@activity)
+    else
+      render :index
+    end
+  end
+
+  def update
+    @activity.update(activity_params)
     redirect_to activity_path(@activity)
+  end
+
+  def destroy
+    @activity.destroy
+    redirect_to activity_path(@activity), status: :see_other
   end
 
   private
