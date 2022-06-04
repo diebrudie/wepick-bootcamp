@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+@media screen and (max-width: 479px) {
+  .l-container.is--home {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+  }
+
+  .home__h1 {
+    margin-bottom: 0.7em;
+    font-size: 1.8em;
+    font-weight: 500;
+  }
+
+  .home__subheadline {
+    font-size: 42px;
+    font-weight: 300;
+    font-family: Cookie;
+    transform: rotate(-4deg) translate(0px, 20px);
+    color: $purple-main;
+  }
+
+  .home__lottie {
+    width: 120%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .home__btns-wrp {
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    flex-direction: column;
+  }
+
+  .button {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #33329a;
+    border-radius: 6px;
+    background-color: #493abb;
+    transition: all 200ms ease;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .button:hover {
+    background-color: #33329a;
+    color: #fff;
+  }
+
+  .button:active {
+    transform: scale(0.95);
+  }
+
+  .button.is--inverted {
+    margin-bottom: 10px;
+    background-color: #fff;
+    color: #493abb;
+  }
+
+  .button.is--inverted:hover {
+    background-color: #493abb;
+    color: #fff;
+  }
+}
