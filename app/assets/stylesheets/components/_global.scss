@@ -112,6 +112,11 @@ h6 {
 
   a {
     font-size: 1.47em;
+    text-decoration: none;
+  }
+
+  a, a:hover, a:active, a:visited {
+    cursor: pointer !important;
   }
 
   .l-container {
