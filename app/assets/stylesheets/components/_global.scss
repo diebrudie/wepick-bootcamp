@@ -190,6 +190,10 @@ a, a:hover, a:active, a:visited {
 
   .top-elements__btn.is--act-done {
     font-size: 18px;
+    position: absolute;
+    top: -116px;
+    left: 199px;
+    height: 35px;
   }
 
   .top-elements__btn-icon {

@@ -5,9 +5,6 @@
         <a href="#" class="top-elements__btn-left is--back-act-new w-inline-block" data-action="click->activity-form#closeForm">
           <%= image_tag "icon-arrow-back.svg", alt: "back button", class: "top-elements__icon", loading: "lazy" %>
         </a>
-        <a href="#" class="top-elements__btn is--act-done w-inline-block">
-          <div>Done</div>
-        </a>
       </div>
       <div class="top-elements__title">Create new Activity</div>
     </div>
@@ -23,14 +20,34 @@
         <%= a.input_field :title, class: "form-act__name" %>
       </div>
     </div>
-    <div class="form-act__description">
-      <div class="form-act__label">
-        <%= a.input :description, class: "form-act__field" %>
-      </div>
+    <div class="form-act__input">
+      <div class="form-act__label">Description</div>
+      <%= a.input_field :description, as: :text, class: "form-act__field" %>
     </div>
-    <%= a.input :activity_type, class: "form-act__field" %>
-    <%= a.input :activity_date, as: :date, html5: true, class: "input-left" %>
-    <%= a.input :deadline_date, as: :date, html5: true %>
+     <div class="form-act__input">
+      <div class="form-act__label">Activity Type</div>
+      <%= a.input_field :activity_type, collection: Activity::ACTIVITY_TYPE, class: "form-act__field is--type" %>
+    </div>
+     <div class="form-act__dates">
+        <div class="form-act__date-wrp">
+          <div class="form-act__date-title">Activity date</div>
+          <div class="form-act__date-box">
+            <%= a.input_field :activity_date, start_year: Date.today.year - 50,
+                                end_year: Date.today.year - 12,
+                                as: :date, html5: true %>
+          </div>
+          <div class="form-act__date-full">02. November 2020</div>
+        </div>
+        <div class="form-act__date-wrp is--right">
+          <div class="form-act__date-title">Voting due date *</div>
+          <div class="form-act__date-box">
+            <%= a.input_field :deadline_date, start_year: Date.today.year - 50,
+                                end_year: Date.today.year - 12,
+                                as: :date, html5: true %>
+          </div>
+          <div class="form-act__date-full">02. November 2020</div>
+        </div>
+      </div>
     <div class="form-act__toggle-wrp">
       <div class="form-act__toggle-row">
       <div class="form-act__tottle-text">Make proposals anonymous</div>

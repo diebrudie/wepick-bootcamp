@@ -1,11 +1,15 @@
 class Activity < ApplicationRecord
+  ACTIVITY_TYPE = ["movies", "traveling", "restaurant", "party", "event", "entertainment", "silly", "drinks", "food", "other"]
+
   belongs_to :user
   has_many :proposals, dependent: :destroy
   has_many :participants, dependent: :destroy
   has_one_attached :photo
 
+
   validates :title, presence: { strict: true }, length: { maximum: 30 }
   validates :activity_type, presence: { strict: true }
+  validates :activity_type, inclusion: { in: ACTIVITY_TYPE }
   validates :description, presence: { strict: true }, length: { maximum: 175 }
   validates :activity_date, presence: { strict: true }
   validates :deadline_date, presence: { strict: true }

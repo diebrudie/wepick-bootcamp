@@ -27,21 +27,14 @@
     position: relative;
     display: flex;
     flex-direction: column;
+  }
+
+  .form-act__img-n-name {
+    display: flex;
+    margin-bottom: 35px;
+    justify-content: flex-start;
+    align-items: center;
     font-size: 1.0582010582010584vw;
-  }
-
-  .form-act__img-n-name {
-    display: flex;
-    margin-bottom: 35px;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .form-act__img-n-name {
-    display: flex;
-    margin-bottom: 35px;
-    justify-content: flex-start;
-    align-items: center;
   }
 
   .form-act__img-circle {
@@ -107,7 +100,7 @@
     font-size: 16px;
   }
 
-  .form-act__description {
+  .form-act__input {
     display: flex;
     margin-bottom: 35px;
     flex-direction: column;
@@ -128,9 +121,14 @@
     border-width: 1px;
     border-color: #dce2ea;
     border-radius: 5px;
-    font-size: 3.5em;
+    font-size: 1.24em;
     line-height: 1.4;
     font-weight: 300;
+  }
+
+  .form-act__field.is--type {
+    height: 35px;
+    min-height: 0px;
   }
 
   .form-act__dates {
@@ -138,6 +136,19 @@
     display: flex;
     margin-bottom: 35px;
     justify-content: space-between;
+  }
+
+  .date {
+    width: 100%;
+    font-size: 14px;
+    color: #848080;
+    height: 35px;
+    margin-right: 5px;
+    padding: 0px 5px 0px 9px; //top right bottom left
+    border-style: solid;
+    border-width: 0.15px;
+    border-color: #dce2ea;
+    border-radius: 5px;
   }
 
   .form-act__date-wrp {
