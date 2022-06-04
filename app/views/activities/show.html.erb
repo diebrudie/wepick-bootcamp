@@ -50,8 +50,8 @@
                   <%=link_to proposal.title, activity_proposal_path(@activity, proposal) %>
                 </div>
                 <div class="proposals-index__votes-wrp">
-                  <img src="images/icon-up-like-filled.svg" loading="lazy" alt="" class="proposals-index__vote-arrow filled">
-                  <img src="images/icon-up-like-empty.svg" loading="lazy" alt="" class="proposals-index__vote-arrow empty is--inactive">
+                  <%= image_tag "icon-up-like-filled.svg", alt: "up voted icon", loading: "lazy", class: "proposals-index__vote-arrow filled is--inactive"%>
+                  <%= image_tag "icon-up-like-empty.svg", alt: "not voted icon", loading: "lazy", class: "proposals-index__vote-arrow empty"%>
                   <div class="proposals-index__vote-number">10</div>
                 </div>
               </div>
