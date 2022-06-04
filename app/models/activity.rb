@@ -1,5 +1,6 @@
 class Activity < ApplicationRecord
-  ACTIVITY_TYPE = ["movies", "traveling", "restaurant", "party", "event", "entertainment", "silly", "drinks", "food", "other"]
+  ACTIVITY_TYPE = ["Movies", "Traveling", "Restaurant", "Party", "Event",
+    "Entertainment", "Silly", "Drinks", "Food", "Other"]
 
   belongs_to :user
   has_many :proposals, dependent: :destroy
