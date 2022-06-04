@@ -77,20 +77,6 @@ h6 {
   font-weight: 400;
 }
 
-a {
-  color: #222;
-  font-size: 1.47em;
-  line-height: 1.6;
-  text-decoration: none;
-  cursor: pointer;
-  color: inherit;
-  font-size: inherit;
-}
-
-a, a:hover, a:active, a:visited {
-  cursor: pointer !important;
-}
-
 .is--min-100vh {
   min-height: 100vh;
 }
@@ -135,7 +121,17 @@ a, a:hover, a:active, a:visited {
   }
 
   a {
-    font-size: 1.47em;
+    color: #222;
+    font-size: 14px;
+    line-height: 1.6;
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  a, a:hover, a:active, a:visited {
+    cursor: pointer !important;
   }
 
   .l-container {
