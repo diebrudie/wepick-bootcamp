@@ -6,7 +6,7 @@
           <%= image_tag "icon-arrow-back.svg", alt: "back button", class: "top-elements__icon", loading: "lazy" %>
         </a>
       </div>
-      <div class="top-elements__title">Create new Activity</div>
+      <div class="top-elements__title">Done</div>
     </div>
 
   <div class="form-act">
@@ -17,7 +17,7 @@
         <%= image_tag "icon-camera-01.svg", alt: "image upload", loading: "lazy" %>
       </div>
       <div class="form-act__name">
-        <%= a.input_field :title, class: "form-act__name" %>
+        <%= a.input_field :title, class: "form-act__name", placeholder: "Activity Name"  %>
       </div>
     </div>
     <div class="form-act__input">
