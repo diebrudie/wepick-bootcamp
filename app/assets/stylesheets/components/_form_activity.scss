@@ -271,10 +271,15 @@
 
   .top-elements__btn.is--act-done {
     font-size: 18px;
-    position: absolute;
+    position: fixed;
     z-index: 5;
-    top: -120px;
-    left: 270px;
+    top: 17px;
+    left: 285px;
     height: 35px;
+    display: none;
+  }
+
+  .top-elements__btn.is--act-done.is--active {
+    display: block;
   }
 }

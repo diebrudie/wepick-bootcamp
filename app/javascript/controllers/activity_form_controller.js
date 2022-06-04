@@ -11,11 +11,13 @@ export default class extends Controller {
   openForm(e) {
     e.preventDefault();
     document.querySelector(".form-activity").classList.add('is--active');
+    document.querySelector(".top-elements__btn.is--act-done").classList.add('is--active');
   }
 
   closeForm(e) {
     e.preventDefault();
     document.querySelector(".form-activity").classList.remove('is--active');
+    document.querySelector(".top-elements__btn.is--act-done").classList.remove('is--active');
   }
 
   activityDate() {
