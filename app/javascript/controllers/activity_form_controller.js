@@ -17,4 +17,28 @@ export default class extends Controller {
     e.preventDefault();
     document.querySelector(".form-activity").classList.remove('is--active');
   }
+
+  activityDate() {
+    console.log('activity date changed')
+    const weekdayArray= ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+    const date = document.querySelector('#activity_activity_date').value
+    const inputDate = new Date(date);
+    const day = inputDate.getDate()
+    const weekday = inputDate.getDay()
+    const month = inputDate.toLocaleString('default', { month: 'long' })
+    let fullDate = `${weekdayArray[weekday]}, ${day} ${month} ${inputDate.getFullYear()}`;
+    document.getElementById("activity_date").innerHTML = fullDate;
+  }
+
+  deadlineDate() {
+    console.log('deadline date changed')
+    const weekdayArray= ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+    const date = document.querySelector('#activity_deadline_date').value
+    let inputDate = new Date(date);
+    let day = inputDate.getDate()
+    const weekday = inputDate.getDay()
+    let month = inputDate.toLocaleString('default', { month: 'long' })
+    let fullDate = `${weekdayArray[weekday]}, ${day} ${month} ${inputDate.getFullYear()}`;
+    document.getElementById("deadline_date").innerHTML = fullDate;
+  }
 }

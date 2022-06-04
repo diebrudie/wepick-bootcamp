@@ -19,7 +19,7 @@
   }
 
   .l-container.is--min-100vh.is--act-form {
-    min-height: 100vh;
+    min-height: 110vh;
     padding-top: 25px;
   }
 
@@ -192,6 +192,10 @@
     border-width: 0.15px;
     border-color: #dce2ea;
     border-radius: 5px;
+  }
+
+  .form-act__date-full {
+    padding-left: 6px;
   }
 
   .form-act__toggle-wrp {

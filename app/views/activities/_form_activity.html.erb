@@ -30,22 +30,25 @@
     </div>
      <div class="form-act__dates">
         <div class="form-act__date-wrp">
-          <div class="form-act__date-title">Activity date</div>
-          <div class="form-act__date-box">
-            <%= a.input_field :activity_date, start_year: Date.today.year - 50,
-                                end_year: Date.today.year - 12,
-                                as: :date, html5: true %>
-          </div>
-          <div class="form-act__date-full">02. November 2020</div>
-        </div>
-        <div class="form-act__date-wrp is--right">
           <div class="form-act__date-title">Voting due date *</div>
           <div class="form-act__date-box">
             <%= a.input_field :deadline_date, start_year: Date.today.year - 50,
                                 end_year: Date.today.year - 12,
-                                as: :date, html5: true %>
+                                as: :date, html5: true, data: { action: 'change->activity-form#deadlineDate' }
+            %>
           </div>
-          <div class="form-act__date-full">02. November 2020</div>
+          <div class="form-act__date-full" id="deadline_date">02. November 2020</div>
+        </div>
+        <div class="form-act__date-wrp  is--right">
+          <div class="form-act__date-title">Activity date</div>
+          <div class="form-act__date-box">
+            <%= a.input_field :activity_date, start_year: Date.today.year - 50,
+                                end_year: Date.today.year - 12,
+                                as: :date, html5: true,
+                                data: { action: 'change->activity-form#activityDate' }
+            %>
+          </div>
+          <div class="form-act__date-full" id="activity_date">02. November 2020</div>
         </div>
       </div>
     <div class="form-act__toggle-wrp">
