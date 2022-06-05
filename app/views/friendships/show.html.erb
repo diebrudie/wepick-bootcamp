@@ -1,0 +1,39 @@
+<section class="section">
+    <div class="l-container is--friend-profile">
+      <div class="top-elements is--friend-profile">
+        <div class="top-elements__back-done is--friend-profile">
+          <a href="#" class="top-elements__btn-left is--back-friend-profile w-inline-block">
+            <%= image_tag "icon-arrow-back.svg", alt: "go back", class: "top-elements__btn-icon", loading: "lazy" %>
+          </a>
+        </div>
+      </div>
+      <div class="friend-profile">
+        <div class="friend-profile__img-wrp">
+          <%= cl_image_tag(@friendship.user.photo.key, class: "friend-profile__img") %>
+        </div>
+        <div class="friend-profile__details">
+          <div class="friend-profile__name"><%= @friendship.user.first_name %> <%= @friendship.user.last_name %></div>
+          <div class="friend-profile__username">@<%= @friendship.user.username %></div>
+        </div>
+        <div class="friend-profile__btns">
+          <a href="#" class="friend-profile__btn w-inline-block">
+            <div>Add friend to an Activity</div>
+          </a>
+        </div>
+        <div class="friend-profile__title">Groups in common</div>
+        <div class="friend-profile__activities-index">
+          <div class="activities__box">
+            <div class="activities__img-wrp">
+              <img src="images/img-halloween-01.jpeg" loading="lazy" alt="" class="activities__img"></div>
+            <div class="activities__content-wrp">
+              <div class="activities__title">Halloween Movie night</div>
+              <div class="activities__date">Friday, 31 October 2022</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="friend-profile__delete-btn w-inline-block">
+        <div>Remove friend</div>
+      </a>
+    </div>
+  </section>
