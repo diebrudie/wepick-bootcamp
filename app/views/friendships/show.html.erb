@@ -9,11 +9,11 @@
       </div>
       <div class="friend-profile">
         <div class="friend-profile__img-wrp">
-          <%= cl_image_tag(@friendship.user.photo.key, class: "friend-profile__img") %>
+          <%= cl_image_tag(@friendship.photo.key, class: "friend-profile__img") %>
         </div>
         <div class="friend-profile__details">
-          <div class="friend-profile__name"><%= @friendship.user.first_name %> <%= @friendship.user.last_name %></div>
-          <div class="friend-profile__username">@<%= @friendship.user.username %></div>
+          <div class="friend-profile__name"><%= @friendship.first_name %> <%= @friendship.last_name %></div>
+          <div class="friend-profile__username">@<%= @friendship.username %></div>
         </div>
         <div class="friend-profile__btns">
           <a href="#" class="friend-profile__btn w-inline-block">
