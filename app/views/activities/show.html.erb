@@ -1,3 +1,4 @@
+<div data-controller="activity-form">
 <section class="section">
     <div class="l-container is--activity-show">
       <div class="activity-show__bg-img-wrp">
@@ -10,7 +11,7 @@
             <a href="#" class="top-elements__btn-left is--back-activity-show w-inline-block">
               <%= image_tag "icon-arrow-back-white.svg", alt: "back button", class: "top-elements__icon", loading: "lazy" %>
             </a>
-            <a href="#" class="top-elements__btn is--settings w-inline-block">
+            <a href="#" class="top-elements__btn is--settings w-inline-block" data-action="click->activity-form#openForm">
               <%= image_tag "icon-settings-white.svg", alt: "settings button", loading: "lazy" %>
             </a>
           </div>
@@ -71,3 +72,5 @@
       <% end %>
     </div>
   </section>
+<%= render "form_activity", activity: @activity %>
+</div>
