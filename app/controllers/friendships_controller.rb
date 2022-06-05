@@ -15,6 +15,6 @@ class FriendshipsController < ApplicationController
   private
 
   def find_friendship
-    @friendship = Activity.find(params[:id])
+    @friendship = Friendship.find(params[:id])
   end
 end
