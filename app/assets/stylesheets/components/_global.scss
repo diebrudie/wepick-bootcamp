@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap');
+=======
 @import url('https://fonts.googleapis.com/css2?family=Fahkwang:wght@200;300;400;500;600&family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+>>>>>>> master
 
 body {
   background-color: transparent;
@@ -16,16 +20,6 @@ body {font-size: 20.31746031746032px;}
 
 .section {
   position: relative;
-}
-
-.l-container {
-  position: relative;
-  width: 100%;
-  max-width: 100em;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 5.56em 7.29em;
-  max-width: 1920px;
 }
 
 h1 {
@@ -123,6 +117,10 @@ h6 {
   }
 
   a {
+<<<<<<< HEAD
+    font-size: 1.47em;
+    text-decoration: none;
+=======
     color: #222;
     font-size: 14px;
     line-height: 1.6;
@@ -130,6 +128,7 @@ h6 {
     cursor: pointer;
     color: inherit;
     font-size: inherit;
+>>>>>>> master
   }
 
   a, a:hover, a:active, a:visited {
@@ -137,9 +136,13 @@ h6 {
   }
 
   .l-container {
+    position: relative;
+    width: 100%;
+    max-width: 100em;
+    margin-right: auto;
+    margin-left: auto;
     padding-right: 4vw;
     padding-left: 4vw;
-    padding-top: 3.45em;
     padding-top: 75px;
   }
 
