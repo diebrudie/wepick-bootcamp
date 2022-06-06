@@ -1,12 +1,32 @@
-http://localhost:3000/activities/1/proposals/1
+<%# http://localhost:3000/activities/1/proposals/1 %>
 
+<br>
 <h1><%= @proposal.title %></h1>
 <br>
-<%= @proposal.description.to_plain_text %>
-<br>
-<br>
-<%= link_to "Activity", activity_path(@activity), class:"btn btn-light" %>
-<%= link_to "Delete",
-  proposal_path(@proposal),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+
+<div class="px-2">
+  <div class="grid-container">
+    <div class="look-at-the-activity-type">
+    <%= @activity.activity_type %>
+    </div>
+
+    <div class="display-current-voting">
+    2. BeataToDo: Add voting
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <div class="description-container">
+    <h2>Description</h2>
+    <%= @proposal.description.to_plain_text %>
+  </div>
+  <br>
+  <br>
+  <%= link_to "Go back to activity", activity_path(@activity), class:"btn btn-light" %>
+
+  <%= link_to "Delete this proposal",
+    proposal_path(@proposal),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</div>
