@@ -6,7 +6,10 @@
           <a href="#" class="top-elements__btn-left w-inline-block">
             <%= image_tag "icon-search.svg", alt: "search friends", class: "top-elements__btn-icon", loading: "lazy" %>
           </a>
-
+          <a href="#" class="top-elements__btn is--friend-invite w-inline-block">
+            <%= image_tag "icon-invite.svg", alt: "invite friends", class: "top-elements__btn-icon", loading: "lazy" %>
+            <div class="top-elements__btn-text is--invite-friends">Invite friends</div>
+          </a>
         </div>
         <div class="top-elements__title">Participants <%= @participants.count %></div>
       </div>
