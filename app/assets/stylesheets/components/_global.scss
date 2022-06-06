@@ -149,13 +149,13 @@ h6 {
   }
 
   .top-elements__back-done {
-    display: flex;
     height: 22px;
     margin-bottom: 3.5em;
     padding-right: 0px;
-    padding-bottom: 0px;
+    display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    padding-bottom: 0px;
+    align-items: center;
   }
 
   .top-elements__btn {
@@ -171,17 +171,12 @@ h6 {
   }
 
   .top-elements__btn-left {
-    padding-right: 4.8em;
+    padding-right: 1.5em;
     padding-bottom: 2em;
   }
 
   .top-elements__btn-icon {
     margin-right: 5px;
-  }
-
-  .top-elements__btn-left {
-    padding-right: 4.8em;
-    padding-bottom: 2em;
   }
 
   .top-elements__title {

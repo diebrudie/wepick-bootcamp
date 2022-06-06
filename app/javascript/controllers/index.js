@@ -7,8 +7,11 @@ import { application } from "./application"
 import ActivityFormController from "./activity_form_controller.js"
 application.register("activity-form", ActivityFormController)
 
+import HelloController from "./hello_controller.js"
+application.register("hello", HelloController)
+
 import RefreshListController from "./refresh_list_controller.js"
 application.register("refresh-list", RefreshListController)
 
-import HelloController from "./hello_controller.js"
-application.register("hello", HelloController)
+import SearchController from "./search_controller.js"
+application.register("search", SearchController)
