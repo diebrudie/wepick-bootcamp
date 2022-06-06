@@ -1,7 +1,16 @@
 .login-picture {
-  position: center;
-  width: 80px;
-  height: 100px;
-  left: 13px;
-  top: 463px;
+width: 100%;
+height: auto;
+}
+
+.button-font-fix {
+font-size: 12px;
+font-weight: 400;
+margin-bottom: 10px;
+}
+
+.right-hand-side {
+width: 100%;
+display: block;
+text-align: right;
 }
