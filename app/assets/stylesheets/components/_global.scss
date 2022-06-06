@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fahkwang:wght@200;300;400;500;600&family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+
 body {
   background-color: transparent;
   font-family: Poppins, sans-serif;
@@ -181,15 +183,6 @@ a, a:hover, a:active, a:visited {
   .top-elements__btn-left {
     padding-right: 4.8em;
     padding-bottom: 2em;
-  }
-
-  .top-elements__btn.is--create-act {
-    align-items: center;
-    color: #96959c;
-  }
-
-  .top-elements__btn.is--act-done {
-    font-size: 18px;
   }
 
   .top-elements__btn-icon {
