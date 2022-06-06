@@ -1,15 +1,3 @@
-<section class="section">
-  <div class="l-container">
-    <div class="proposal">
-      <%= simple_form_for([@activity, @proposal]) do |f| %>
-        <%= f.input :title %>
-        <%= f.input :description, as: :rich_text_area %>
-        <%= f.submit "Submit Proposal" %>
-      <% end %>
-    </div>
-  </div>
-</div>
-
 <div class="section">
   <div class="l-container is--min-100vh is--proposal-form">
     <div class="top-elements is--fixed">
@@ -17,7 +5,7 @@
       <%= link_to image_tag("icon-arrow-back-black.svg", alt: "back button", class: "top-elements__icon", loading: "lazy"), activity_path(@activity), class: "top-elements__btn-left is--back-act-new w-inline-block" %>
       </div>
       <div class="top-elements__title">
-        <% if params[:action] == 'index' %>
+        <% if params[:action] == 'new' %>
           Add new Proposal
         <% else %>
           Proposal Settings
@@ -25,9 +13,21 @@
       </div>
     </div>
 
-    <div class="form-act">
-
+    <div class="form-proposal">
+      <%= simple_form_for([@activity, @proposal]) do |a| %>
+        <div class="form-proposal__input">
+          <div class="form-proposal__label">Title</div>
+          <%= a.input_field :title, class: "form-proposal__field" %>
+        </div>
+        <div class="form-proposal__input">
+          <div class="form-proposal__label">Description</div>
+          <%= a.input :description, as: :rich_text_area, class: "form-proposal__field" %>
+        </div>
+        <%= a.button :submit, "Submit Proposal", class: "top-elements__btn is--proposal-done w-inline-block" %>
+      <% end %>
     </div>
-
+    <% if @proposal.id %>
+      <%= link_to "Delete Proposal", proposal_path(@proposal), class: "general__delete-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete your proposal?" } %>
+    <% end %>
   </div>
 </div>

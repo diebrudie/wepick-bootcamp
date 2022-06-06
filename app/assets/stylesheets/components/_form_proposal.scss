@@ -3,4 +3,52 @@
     min-height: 145vh;
     padding-top: 135px;
   }
+
+  .form-proposal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 75vh;
+    margin-bottom: 15%;
+  }
+
+  .form-proposal__input {
+    display: flex;
+    margin-bottom: 35px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-proposal__label {
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .form-proposal__field {
+    width: 100%;
+    min-height: 120px;
+    padding: 15px 10px 0px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #dce2ea;
+    border-radius: 5px;
+    font-size: 1.24em;
+    line-height: 1.4;
+    font-weight: 300;
+  }
+
+  .top-elements__btn.is--proposal-done {
+    font-size: 18px;
+    position: fixed;
+    z-index: 5;
+    top: 17px;
+    left: 285px;
+    height: 35px;
+    display: none;
+  }
+
+  .top-elements__btn.is--proposal-done.is--active {
+    display: block;
+  }
 }
