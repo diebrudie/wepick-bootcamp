@@ -9,3 +9,6 @@ application.register("activity-form", ActivityFormController)
 
 import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
+
+import ProposalFormController from "./proposal_form_controller.js"
+application.register("proposal-form", ProposalFormController)

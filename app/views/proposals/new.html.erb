@@ -1,5 +1,33 @@
-<%= simple_form_for([@activity, @proposal]) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description, as: :rich_text_area %>
-  <%= f.submit "Submit Proposal" %>
-<% end %>
+<section class="section">
+  <div class="l-container">
+    <div class="proposal">
+      <%= simple_form_for([@activity, @proposal]) do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description, as: :rich_text_area %>
+        <%= f.submit "Submit Proposal" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="l-container is--min-100vh is--proposal-form">
+    <div class="top-elements is--fixed">
+      <div class="top-elements__back-done">
+      <%= link_to image_tag("icon-arrow-back-black.svg", alt: "back button", class: "top-elements__icon", loading: "lazy"), activity_path(@activity), class: "top-elements__btn-left is--back-act-new w-inline-block" %>
+      </div>
+      <div class="top-elements__title">
+        <% if params[:action] == 'index' %>
+          Add new Proposal
+        <% else %>
+          Proposal Settings
+        <% end %>
+      </div>
+    </div>
+
+    <div class="form-act">
+
+    </div>
+
+  </div>
+</div>
