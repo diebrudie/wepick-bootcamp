@@ -14,19 +14,20 @@
     2. BeataToDo: Add voting
     </div>
   </div>
+
   <br>
   <br>
 
-  <div class="description-container">
-    <h2>Description</h2>
-    <%= @proposal.description.to_plain_text %>
+   <p class="description-text">Description</p>
+   <br>
+    <div class="description-container">
+      <%= @proposal.description.to_plain_text %>
+    </div>
+  <br>
+  <br>
+
+  <div class="grid-container">
+  <%= button_to "Go back to activity", activity_path(@activity) %>
+  <%= button_to "Delete this proposal", proposal_path(@proposal), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   </div>
-  <br>
-  <br>
-  <%= link_to "Go back to activity", activity_path(@activity), class:"btn btn-light" %>
-
-  <%= link_to "Delete this proposal",
-    proposal_path(@proposal),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
 </div>
