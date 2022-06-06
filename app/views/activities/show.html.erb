@@ -39,37 +39,31 @@
           <div>Close Voting</div>
         </a>
       </div>
-      <% if @activity.proposals.size > 0 %>
-        <% @activity.proposals.each do |proposal| %>
-            <div class="proposals-index">
-              <div class="proposals-index__row is--header">
-                <div>Name</div>
-                <div>Votes</div>
-              </div>
-              <div class="proposals-index__row">
-                <div class="proposals-index__title">
-                  <%=link_to proposal.title, activity_proposal_path(@activity, proposal) %>
+      <div class="proposals-index">
+        <div class="proposals-index__row is--header">
+          <div>Name</div>
+          <div>Votes</div>
+        </div>
+        <% if @activity.proposals.size > 0 %>
+          <% @activity.proposals.each do |proposal| %>
+                <div class="proposals-index__row">
+                  <div class="proposals-index__title">
+                    <%=link_to proposal.title, activity_proposal_path(@activity, proposal) %>
+                  </div>
+                  <div class="proposals-index__votes-wrp">
+                    <%= image_tag "icon-up-like-filled.svg", alt: "up voted icon", loading: "lazy", class: "proposals-index__vote-arrow filled is--inactive"%>
+                    <%= image_tag "icon-up-like-empty.svg", alt: "not voted icon", loading: "lazy", class: "proposals-index__vote-arrow empty"%>
+                    <div class="proposals-index__vote-number">10</div>
+                  </div>
                 </div>
-                <div class="proposals-index__votes-wrp">
-                  <%= image_tag "icon-up-like-filled.svg", alt: "up voted icon", loading: "lazy", class: "proposals-index__vote-arrow filled is--inactive"%>
-                  <%= image_tag "icon-up-like-empty.svg", alt: "not voted icon", loading: "lazy", class: "proposals-index__vote-arrow empty"%>
-                  <div class="proposals-index__vote-number">10</div>
+            <% end %>
+        <% else %>
+                <div class="proposals-index__empty">
+                  <div class="proposals-index__empty-text">There are no proposals yet.<br>Be the first one to add a proposal so others can vote for it!</div>
+                  <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_iq9koc12.json" background="transparent" class="proposal-index__lottie" speed="1" loop autoplay></lottie-player>
                 </div>
-              </div>
-            </div>
-          <% end %>
-      <% else %>
-          <div class="proposals-index">
-              <div class="proposals-index__empty">
-                <div class="proposals-index__empty-text">There are no proposals yet.<br>Be the first one to add a proposal so others can vote for it!</div>
-                <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_iq9koc12.json" background="transparent" class="proposal-index__lottie" speed="1" loop autoplay></lottie-player>
-              </div>
-              <div class="proposals-index__row is--header">
-                <div>Name</div>
-                <div>Votes</div>
-              </div>
-            </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </section>
 <%= render "form_activity", activity: @activity %>
