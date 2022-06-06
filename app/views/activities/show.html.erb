@@ -1,33 +1,76 @@
-  <%= cl_image_tag(@activity.photo.key, width: 400, height: 300) %>
-
-<div class ="container">
-  <h1><%= @activity.title  %> </h1>
-  <div class ="d-flex justify-content-between">
-    <p>Happening on <%= @activity.activity_date.strftime('%b. %d. %y') %></p>
-    <p><%= rand(1..15)%> Participants</p>
-  </div>
-  <br>
-  <p><%= @activity.description %></p>
-  <br>
-  <div class = "d-flex justify-content-around">
-    <%= link_to "add proposal", new_activity_proposal_path(@activity) %>
-    <button class= "btn btn-light">Rearrange</button>
-    <button class= "btn btn-light">Close voting</button>
-  </div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Votes</th>
-        </tr>
-    </thead>
-    <% @activity.proposals.each do |proposal| %>
-      <tbody>
-        <tr>
-          <td><%=link_to proposal.title, activity_proposal_path(@activity, proposal) %></td>
-          <td><%= rand(1..14)  %></td>
-        </tr>
-    <% end %>
-    </tbody>
-  </table>
+<div data-controller="activity-form">
+<section class="section">
+    <div class="l-container is--activity-show">
+      <div class="activity-show__bg-img-wrp">
+        <%= cl_image_tag(@activity.photo.key, alt: "Activity image", class: "activity-show__bg-img", loading: "lazy") %>
+        <div class="activity-show__bg-img-overlay"></div>
+      </div>
+      <div class="activity-show__top-elements">
+        <div class="top-elements is--activity-show">
+          <div class="top-elements__back-done is--activity-show">
+            <a href="#" class="top-elements__btn-left is--back-activity-show w-inline-block">
+              <%= image_tag "icon-arrow-back-white.svg", alt: "back button", class: "top-elements__icon", loading: "lazy" %>
+            </a>
+            <a href="#" class="top-elements__btn is--settings w-inline-block" data-action="click->activity-form#openForm">
+              <%= image_tag "icon-settings-white.svg", alt: "settings button", loading: "lazy" %>
+            </a>
+          </div>
+          <div class="activity-show__profile">
+            <%= cl_image_tag(@activity.photo.key, alt: "Activity image", class: "activity-show__profile-img", loading: "lazy") %>
+          </div>
+        </div>
+      </div>
+      <div class="activity-show__details">
+        <div class="top-elements__title is--activity-show"><%= @activity.title %></div>
+        <div class="activity-show__flex-wrp">
+          <div class="activity-show__happening">Happening in 10 days</div>
+          <a href="#" class="activity-show__participants w-inline-block">
+            <div class="activity-show__participants-text">0 partcipants</div>
+          </a>
+        </div>
+        <div class="activity-show__description"><%= @activity.description %></div>
+      </div>
+      <div class="activity-show__btns">
+        <%= link_to "add proposal", new_activity_proposal_path(@activity), class: "activity-show__btn w-inline-block" %>
+        <a href="#" class="activity-show__btn is--inverted w-inline-block">
+          <div>Choose random</div>
+        </a>
+        <a href="#" class="activity-show__btn is--last w-inline-block">
+          <div>Close Voting</div>
+        </a>
+      </div>
+      <% if @activity.proposals.size > 0 %>
+        <% @activity.proposals.each do |proposal| %>
+            <div class="proposals-index">
+              <div class="proposals-index__row is--header">
+                <div>Name</div>
+                <div>Votes</div>
+              </div>
+              <div class="proposals-index__row">
+                <div class="proposals-index__title">
+                  <%=link_to proposal.title, activity_proposal_path(@activity, proposal) %>
+                </div>
+                <div class="proposals-index__votes-wrp">
+                  <%= image_tag "icon-up-like-filled.svg", alt: "up voted icon", loading: "lazy", class: "proposals-index__vote-arrow filled is--inactive"%>
+                  <%= image_tag "icon-up-like-empty.svg", alt: "not voted icon", loading: "lazy", class: "proposals-index__vote-arrow empty"%>
+                  <div class="proposals-index__vote-number">10</div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+      <% else %>
+          <div class="proposals-index">
+              <div class="proposals-index__empty">
+                <div class="proposals-index__empty-text">There are no proposals yet.<br>Be the first one to add a proposal so others can vote for it!</div>
+                <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_iq9koc12.json" background="transparent" class="proposal-index__lottie" speed="1" loop autoplay></lottie-player>
+              </div>
+              <div class="proposals-index__row is--header">
+                <div>Name</div>
+                <div>Votes</div>
+              </div>
+            </div>
+      <% end %>
+    </div>
+  </section>
+<%= render "form_activity", activity: @activity %>
 </div>
