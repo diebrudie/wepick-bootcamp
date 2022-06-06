@@ -1,5 +1,6 @@
 <h2 class="text-center">Hello again!</h2>
 <p class="text-center">Welcome back, you were missed.</p>
+<br></br>
 
 <div class="px-2">
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
@@ -15,13 +16,13 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Log in", class: "btn-login w-100 button-font-fix" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
 </div>
 
-<div class="image-responsive">
-  <%= image_tag asset_path("todefine/astronaut.jpg"), class: "login-picture"%>
+<div>
+  <%= image_tag asset_path("login/hellopicture2.png"), class: "login-picture"%>
 </div>
