@@ -3,9 +3,13 @@
 <% @friendships.each do |friendship| %>
   <% if friendship.asker == current_user %>
     <% @friends.push(friendship.receiver.username) %>
+    <%=friendship.receiver.username  %>
+    <%= button_to "ADD FRIEND", activity_participants_path(activity: @activity, participant: friendship.receiver ) %>
   <% else %>
     <% @friends.push(friendship.asker.username)  %>
-<% end %>
+    <%= friendship.asker.username %>
+    <%= button_to "ADD FRIEND", activity_participants_path(activity: @activity, participant: friendship.receiver ) %>
+  <% end %>
 <% end %>
 
   <% @friends.each do |friend| %>
@@ -17,6 +21,3 @@
   <%= f.input :user, collection: @friends%>
   <%= f.submit %>
 <% end %>
-
-
-  <%# button_to "ADD FRIEND", activity_participants_path(activity: @activity, participant: ) %>
