@@ -37,6 +37,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    min-height: 75vh;
   }
 
   .form-act__img-n-name {
@@ -281,5 +282,22 @@
 
   .top-elements__btn.is--act-done.is--active {
     display: block;
+  }
+
+  .form-activity__delete-btn {
+    display: flex;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 18px 25px 10px;
+    justify-content: center;
+    align-items: center;
+    border-top: 0.5px solid #dce2ea;
+    color: #f50d0d;
+    font-size: 13px;
+  }
+
+  .form-activity__delete-btn:hover {
+    color: #b40909;
   }
 }

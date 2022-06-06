@@ -6,62 +6,67 @@
           <%= image_tag "icon-arrow-back.svg", alt: "back button", class: "top-elements__icon", loading: "lazy" %>
         </a>
       </div>
-      <div class="top-elements__title">Create New Activity</div>
+      <div class="top-elements__title"><%= @form_title %></div>
     </div>
 
-  <div class="form-act">
-  <%= simple_form_for activity do |a| %>
-    <div class="form-act__img-n-name">
-      <div class="form-act__img-circle">
-        <%= a.input :photo, as: :file, class: "form-act__img-circle", label: false %>
-        <%= image_tag "icon-camera-01.svg", alt: "image upload", loading: "lazy" %>
-      </div>
-      <div class="form-act__name">
-        <%= a.input_field :title, class: "form-act__name", placeholder: "Activity Name"  %>
-      </div>
-    </div>
-    <div class="form-act__input">
-      <div class="form-act__label">Description</div>
-      <%= a.input_field :description, as: :text, class: "form-act__field" %>
-    </div>
-     <div class="form-act__input">
-      <div class="form-act__label">Activity Type</div>
-      <%= a.input_field :activity_type, collection: Activity::ACTIVITY_TYPE, class: "form-act__field is--type" %>
-    </div>
-     <div class="form-act__dates">
-        <div class="form-act__date-wrp">
-          <div class="form-act__date-title">Voting due date *</div>
-          <div class="form-act__date-box">
-            <%= a.input_field :deadline_date, start_year: Date.today.year - 50,
-                                end_year: Date.today.year - 12,
-                                as: :date, html5: true, data: { action: 'change->activity-form#deadlineDate' }
-            %>
+    <div class="form-act">
+      <%= simple_form_for activity do |a| %>
+        <div class="form-act__img-n-name">
+          <div class="form-act__img-circle">
+            <%= a.input :photo, as: :file, class: "form-act__img-circle", label: false %>
+            <%= image_tag "icon-camera-01.svg", alt: "image upload", loading: "lazy" %>
           </div>
-          <div class="form-act__date-full" id="deadline_date">Select a date</div>
-        </div>
-        <div class="form-act__date-wrp  is--right">
-          <div class="form-act__date-title">Activity date</div>
-          <div class="form-act__date-box">
-            <%= a.input_field :activity_date, start_year: Date.today.year - 50,
-                                end_year: Date.today.year - 12,
-                                as: :date, html5: true,
-                                data: { action: 'change->activity-form#activityDate' }
-            %>
+          <div class="form-act__name">
+            <%= a.input_field :title, class: "form-act__name", placeholder: "Activity Name"  %>
           </div>
-          <div class="form-act__date-full" id="activity_date">Select a date</div>
         </div>
-      </div>
-    <div class="form-act__toggle-wrp">
-      <div class="form-act__toggle-row">
-      <div class="form-act__tottle-text">Make proposals anonymous</div>
-        <div class="custom-control custom-switch toggle">
-          <input type="checkbox" class="custom-control-input toggle__fill" id="customSwitch1" name="anonymity">
-          <%#= a.input_field :anonymity, label: false, as: :boolean, class: 'custom-control-input toggle__fill', id: 'customSwitch1' %>
+        <div class="form-act__input">
+          <div class="form-act__label">Description</div>
+          <%= a.input_field :description, as: :text, class: "form-act__field" %>
         </div>
-      </div>
+        <div class="form-act__input">
+          <div class="form-act__label">Activity Type</div>
+          <%= a.input_field :activity_type, collection: Activity::ACTIVITY_TYPE, class: "form-act__field is--type" %>
+        </div>
+        <div class="form-act__dates">
+          <div class="form-act__date-wrp">
+            <div class="form-act__date-title">Voting due date *</div>
+            <div class="form-act__date-box">
+              <%= a.input_field :deadline_date, start_year: Date.today.year - 50,
+                                  end_year: Date.today.year - 12,
+                                  as: :date, html5: true, data: { action: 'change->activity-form#deadlineDate' }
+              %>
+            </div>
+            <div class="form-act__date-full" id="deadline_date">Select a date</div>
+          </div>
+          <div class="form-act__date-wrp  is--right">
+            <div class="form-act__date-title">Activity date</div>
+            <div class="form-act__date-box">
+              <%= a.input_field :activity_date, start_year: Date.today.year - 50,
+                                  end_year: Date.today.year - 12,
+                                  as: :date, html5: true,
+                                  data: { action: 'change->activity-form#activityDate' }
+              %>
+            </div>
+            <div class="form-act__date-full" id="activity_date">Select a date</div>
+          </div>
+        </div>
+        <div class="form-act__toggle-wrp">
+          <div class="form-act__toggle-row">
+          <div class="form-act__tottle-text">Make proposals anonymous</div>
+            <div class="custom-control custom-switch toggle">
+              <input type="checkbox" class="custom-control-input toggle__fill" id="customSwitch1" name="anonymity">
+              <%#= a.input_field :anonymity, label: false, as: :boolean, class: 'custom-control-input toggle__fill', id: 'customSwitch1' %>
+            </div>
+          </div>
+        </div>
+        <%= a.button :submit, "Done", class: "top-elements__btn is--act-done w-inline-block" %>
+      <% end %>
     </div>
-    <%= a.button :submit, "Done", class: "top-elements__btn is--act-done w-inline-block" %>
-  <% end %>
-</div>
+    <% if @activity.present? %>
+      <a href="#" class="friend-profile__delete-btn w-inline-block">
+          <div>Remove friend</div>
+      </a>
+    <% end %>
   </div>
 </div>
