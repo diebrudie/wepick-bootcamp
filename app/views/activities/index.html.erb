@@ -34,3 +34,5 @@
 <%= render "form_activity", activity: @activity %>
 <%= render "shared/bottom_navbar" %>
 </div>
+
+<%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
