@@ -1,25 +1,39 @@
-<h2>Sign up</h2>
+<h2 class="text-center">Sign up here!</h2>
+<p class="text-center">Create your account right now</p>
+<br></br>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-  </div>
+  <div class="px-2">
+    <div class="form-inputs">
+      <%= f.input :username,
+                        autofocus: true %>
+      <%= f.input :first_name,
+                        autofocus: true %>
+      <%= f.input :last_name,
+                        autofocus: true %>
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :password,
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :confirm_password,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.label :picture %>
+      <%= f.input :photo, as: :file, class: "form-act__img-circle", label: false %>
+      <%= image_tag "icon-camera-01.svg", alt: "image upload", loading: "lazy" %>
+    </div>
+    <br></br>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit, "Sign up", class: "btn-signup w-100" %>
+    </div>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= link_to "Log in", new_session_path(resource_name), class: "signup-right-hand-side"%>
+</div>
