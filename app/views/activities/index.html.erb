@@ -1,58 +1,88 @@
 <div data-controller="activity-form">
-<section class="section">
-  <div class="l-container">
-    <div class="index-act">
-      <div class="top-elements">
-        <div class="top-elements__back-done">
-          <a href="#" class="top-elements__btn-left w-inline-block">
-            <%= image_tag "icon-search.svg", alt: "search icon", class: "top-elements__icon", loading: "lazy" %>
-          </a>
-          <a href="#" class="top-elements__btn is--create-act w-inline-block" data-action="click->activity-form#openForm">
-            <%= image_tag "icon-create-02-grey.svg", alt: "create activity", class: "top-elements__btn-icon", loading: "lazy" %>
-            <div class="top-elements__btn-text">Create new</div>
-          </a>
+  <section class="section">
+    <div class="l-container">
+      <div class="index-act" data-controller="refresh-list">
+        <div class="top-elements">
+          <div class="top-elements__back-done">
+            <a href="#" class="top-elements__btn-left w-inline-block">
+              <%= image_tag "icon-search.svg", alt: "search icon", class: "top-elements__icon", loading: "lazy" %>
+            </a>
+            <div>
+              <%= form_with url: activities_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
+                <%= f.text_field :query,
+                                class: "form-control",
+                                placeholder: 'Type name!',
+                                value: params[:query],
+                                data: {
+                                  refresh_list_target: 'searchInput',
+                                  action: "keyup->refresh-list#update"
+                                } %>
+              <% end %>
+            </div>
+            <%# <% end %>
+            <a href="#" class="top-elements__btn is--create-act w-inline-block" data-action="click->activity-form#openForm">
+              <%= image_tag "icon-create-02-grey.svg", alt: "create activity", class: "top-elements__btn-icon", loading: "lazy" %>
+              <div class="top-elements__btn-text">Create new</div>
+            </a>
+          </div>
         </div>
-        <div class="top-elements__title">Your Activities</div>
-      </div>
-      <div class="activities">
-        <% @activities_user.each do |activity| %>
-            <%= link_to activity_path(activity), class:"activities__box" do %>
-                <div class="activities__img-wrp">
-                  <%= cl_image_tag(activity.photo.key, alt: "activity image", class: "activities__img", loading: "lazy") %>
-                </div>
-                <div class="activities__content-wrp">
-                  <div class="activities__title"><%= activity.title %></div>
-                  <div class="activities__date"><%= activity.activity_date.strftime('%A, %d %B %Y') %></div>
-                </div>
+        <div data-refresh-list-target="list">
+          <div class="top-elements__title">Your Activities</div>
+          <div class="activities__date">Hosting</div>
+          <div class="activities">
+            <% @activities_user.each do |activity| %>
+                <%= link_to activity_path(activity), class:"activities__box" do %>
+                    <div class="activities__img-wrp">
+                      <%= cl_image_tag(activity.photo.key, alt: "activity image", class: "activities__img", loading: "lazy") %>
+                    </div>
+                    <div class="activities__content-wrp">
+                      <div class="activities__title"><%= activity.title %></div>
+                      <div class="activities__date"><%= activity.activity_date.strftime('%A, %d %B %Y') %></div>
+                    </div>
+                <% end %>
             <% end %>
-        <% end %>
+          </div>
+          <div class="activities__date">Participating</div>
+          <div class="activities">
+            <% @participants_user.each do |activity| %>
+                <%= link_to activity_path(activity), class:"activities__box" do %>
+                    <div class="activities__img-wrp">
+                      <%= cl_image_tag(activity.photo.key, alt: "activity image", class: "activities__img", loading: "lazy") %>
+                    </div>
+                    <div class="activities__content-wrp">
+                      <div class="activities__title"><%= activity.title %></div>
+                      <div class="activities__date"><%= activity.activity_date.strftime('%A, %d %B %Y') %></div>
+                    </div>
+                <% end %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<%= render "form_activity", activity: @activity %>
+  </section>
+  <%= render "form_activity", activity: @activity %>
 </div>
 
 <div class="nav">
-    <a href="/friends" class="nav__btn w-inline-block">
-      <%= image_tag "icon-friends-inactive.svg", alt: "Friends Page", class: "nav__btn-icon", id: "icon1-inactive" %>
-      <%= image_tag "icon-friends-active.svg", alt: "Friends Page", class: "nav__btn-icon is--inactive" %>
-      <div class="nav__btn-title">Friends</div>
-    </a>
-    <a href="/activities" class="nav__btn is--active w-inline-block">
-      <%= image_tag "icon-groups-inactive.png", alt: "Groups Page", class: "nav__btn-icon is--inactive", id: "icon2-inactive" %>
-      <%= image_tag "icon-groups-active.svg", alt: "Groups Page", class: "nav__btn-icon" %>
-      <div class="nav__btn-title">Activities</div>
-    </a>
-    <a href="/news" class="nav__btn w-inline-block">
-      <%= image_tag "icon-notifications-inactive.svg", alt: "News Page", class: "nav__btn-icon", id: "icon3-inactive" %>
-      <%= image_tag "icon-notifications-active.svg", alt: "News Page", class: "nav__btn-icon is--inactive" %>
-      <div class="nav__btn-title">Notifications</div>
-    </a>
-    <a href="/profile" class="nav__btn w-inline-block">
-      <div class="nav__btn-icon is--profile">
-        <%= cl_image_tag(current_user.photo.key, alt: "Profile image", class: "nav__profile-img", loading: "lazy") %>
-      </div>
-      <div class="nav__btn-title">Profile</div>
-    </a>
-  </div>
+  <a href="/friends" class="nav__btn w-inline-block">
+    <%= image_tag "icon-friends-inactive.svg", alt: "Friends Page", class: "nav__btn-icon", id: "icon1-inactive" %>
+    <%= image_tag "icon-friends-active.svg", alt: "Friends Page", class: "nav__btn-icon is--inactive" %>
+    <div class="nav__btn-title">Friends</div>
+  </a>
+  <a href="/activities" class="nav__btn is--active w-inline-block">
+    <%= image_tag "icon-groups-inactive.png", alt: "Groups Page", class: "nav__btn-icon is--inactive", id: "icon2-inactive" %>
+    <%= image_tag "icon-groups-active.svg", alt: "Groups Page", class: "nav__btn-icon" %>
+    <div class="nav__btn-title">Activities</div>
+  </a>
+  <a href="/news" class="nav__btn w-inline-block">
+    <%= image_tag "icon-notifications-inactive.svg", alt: "News Page", class: "nav__btn-icon", id: "icon3-inactive" %>
+    <%= image_tag "icon-notifications-active.svg", alt: "News Page", class: "nav__btn-icon is--inactive" %>
+    <div class="nav__btn-title">Notifications</div>
+  </a>
+  <a href="/profile" class="nav__btn w-inline-block">
+    <div class="nav__btn-icon is--profile">
+      <%= cl_image_tag(current_user.photo.key, alt: "Profile image", class: "nav__profile-img", loading: "lazy") %>
+    </div>
+    <div class="nav__btn-title">Profile</div>
+  </a>
+</div>

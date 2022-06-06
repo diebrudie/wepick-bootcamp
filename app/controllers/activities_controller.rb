@@ -2,10 +2,21 @@ class ActivitiesController < ApplicationController
   before_action :find_activity, only: %i[show edit update destroy]
 
   def index
-    #@activities = Activity.all
     @activities_user = Activity.all.where("user_id = #{current_user.id}")
+    @participants_user = Activity.joins(:participants).where(participants: { user_id: current_user.id }).where.not(id: @activities_user.map {|activity| activity.id})
     @activity = Activity.new
     @form_title = "Create new Activity"
+
+    if params[:query].present?
+      @activities_user = @activities_user.where("title ILIKE ?", "%#{params[:query]}%")
+      @participants_user = @participants_user.where("title ILIKE ?", "%#{params[:query]}%")
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'list', locals: { activities: @activities_user, participants_user: @participants_user }, formats: :html }
+    end
+
   end
 
   def show; end
