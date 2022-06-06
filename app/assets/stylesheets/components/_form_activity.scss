@@ -236,14 +236,23 @@
     font-weight: 500;
   }
 
+  .form-switch {
+    height: 3em;
+  }
+
   .form-switch .form-check-input {
     width: 4em;
     height: 2.45em;
     //background-color: #96959c;
   }
 
-  .form-switch .form-check-input:focus ~ {
-    box-shadow: 0 0 0 0rem rgba(162, 42, 210, 0) !important;
+  .form-switch .form-check-input:checked {
+    background-color: #248a3c;
+  }
+
+  .form-switch .form-check-input:focus {
+    box-shadow: 0 0 0 3rem rgba(151, 26, 200, 0) !important;
+    border: 1px solid rgba(2, 2, 2, 0.25);
   }
 
   .toggle.is--active {
