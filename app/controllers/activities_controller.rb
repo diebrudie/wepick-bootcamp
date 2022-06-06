@@ -5,11 +5,10 @@ class ActivitiesController < ApplicationController
     #@activities = Activity.all
     @activities_user = Activity.all.where("user_id = #{current_user.id}")
     @activity = Activity.new
+    @form_title = "Create new Activity"
   end
 
-  def show
-    @activity = Activity.find(params[:id])
-  end
+  def show; end
 
   def create
     @activity = Activity.new(activity_params)
@@ -22,6 +21,7 @@ class ActivitiesController < ApplicationController
   end
 
   def update
+    @form_title = "Activity Settings"
     @activity.update(activity_params)
     redirect_to activity_path(@activity)
   end

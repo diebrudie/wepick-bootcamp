@@ -12,4 +12,27 @@
       <% end %>
     </ul>
   <% end %>
-<%= render "shared/bottom_navbar" %>
+
+<div class="nav">
+    <a href="/friends" class="nav__btn is--active w-inline-block">
+      <%= image_tag "icon-friends-inactive.svg", alt: "Friends Page", class: "nav__btn-icon is--inactive", id: "icon1-inactive" %>
+      <%= image_tag "icon-friends-active.svg", alt: "Friends Page", class: "nav__btn-icon" %>
+      <div class="nav__btn-title">Friends</div>
+    </a>
+    <a href="/activities" class="nav__btn w-inline-block">
+      <%= image_tag "icon-groups-inactive.png", alt: "Groups Page", class: "nav__btn-icon", id: "icon2-inactive" %>
+      <%= image_tag "icon-groups-active.svg", alt: "Groups Page", class: "nav__btn-icon is--inactive" %>
+      <div class="nav__btn-title">Activities</div>
+    </a>
+    <a href="/news" class="nav__btn w-inline-block">
+      <%= image_tag "icon-notifications-inactive.svg", alt: "News Page", class: "nav__btn-icon", id: "icon3-inactive" %>
+      <%= image_tag "icon-notifications-active.svg", alt: "News Page", class: "nav__btn-icon is--inactive" %>
+      <div class="nav__btn-title">Notifications</div>
+    </a>
+    <a href="/profile" class="nav__btn w-inline-block">
+      <div class="nav__btn-icon is--profile">
+        <%= cl_image_tag(current_user.photo.key, alt: "Profile image", class: "nav__profile-img", loading: "lazy") %>
+      </div>
+      <div class="nav__btn-title">Profile</div>
+    </a>
+  </div>

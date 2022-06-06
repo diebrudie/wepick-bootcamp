@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap');
+=======
+@import url('https://fonts.googleapis.com/css2?family=Fahkwang:wght@200;300;400;500;600&family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+>>>>>>> master
 
 body {
   background-color: transparent;
@@ -113,8 +117,18 @@ h6 {
   }
 
   a {
+<<<<<<< HEAD
     font-size: 1.47em;
     text-decoration: none;
+=======
+    color: #222;
+    font-size: 14px;
+    line-height: 1.6;
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+    font-size: inherit;
+>>>>>>> master
   }
 
   a, a:hover, a:active, a:visited {
@@ -168,15 +182,6 @@ h6 {
   .top-elements__btn-left {
     padding-right: 4.8em;
     padding-bottom: 2em;
-  }
-
-  .top-elements__btn.is--create-act {
-    align-items: center;
-    color: #96959c;
-  }
-
-  .top-elements__btn.is--act-done {
-    font-size: 18px;
   }
 
   .top-elements__btn-icon {
