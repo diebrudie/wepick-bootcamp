@@ -1,11 +1,16 @@
 // Import your components CSS files here.
 @import "activities_index";
+@import "activity_show";
 @import "alert";
 @import "avatar";
-@import "bottom_navbar";
 @import "form_activity";
 @import "form_legend_clear";
 @import "friends_index";
 @import "global";
+<<<<<<< HEAD
+@import "homepage";
+=======
+@import "navbar_bottom";
+@import "navbar_top";
+>>>>>>> master
 @import "navbar";
-@import "top_navbar";
