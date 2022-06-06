@@ -1,5 +1,6 @@
 .btn-signup {
 background-color: #33329A;
+border-radius: 5px;
 color: white;
 padding: 8px 16px;
 display: block;
@@ -8,9 +9,10 @@ text-align: center;
 
 .btn-login {
 background-color: white;
-outline-color: #33329A;
-border: 2px solid #33329A;
+border-radius: 5px;
 color: #33329A;
+outline-color: #33329A;
+border: 1px solid #33329A;
 padding: 8px 16px;
 display: block;
 text-align: center;
