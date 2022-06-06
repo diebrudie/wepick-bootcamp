@@ -5,7 +5,6 @@ class ActivitiesController < ApplicationController
     #@activities = Activity.all
     @activities_user = Activity.all.where("user_id = #{current_user.id}")
     @activity = Activity.new
-    @form_title = "Create new Activity"
   end
 
   def show; end
@@ -20,15 +19,17 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
-    @form_title = "Activity Settings"
     @activity.update(activity_params)
     redirect_to activity_path(@activity)
   end
 
   def destroy
     @activity.destroy
-    redirect_to activity_path(@activity), status: :see_other
+    redirect_to activities_path, status: :see_other
   end
 
   private
