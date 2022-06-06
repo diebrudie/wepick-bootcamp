@@ -75,7 +75,7 @@ puts "Creating activities..."
 
 activity1 = Activity.new(
   title: 'Birthday BBQ in the park',
-  activity_type: 'Birthday',
+  activity_type: 'Party',
   description: 'Which park should we go to?',
   activity_date: '2022/07/07',
   deadline_date: '2022/07/01'
@@ -86,11 +86,11 @@ activity1.user = user1
 file = URI.open("app/assets/images/activities/barbecue.jpeg")
 
 activity1.photo.attach(io: file, filename: "barbecue.jpeg", content_type: "image/jpeg")
-activity1.save
+activity1.save!
 
 activity2 = Activity.new(
   title: 'Boat party',
-  activity_type: 'Graduation',
+  activity_type: 'Event',
   description: 'What should we do on the boat for graduation from Le Wagon?',
   activity_date: '2022/07/10',
   deadline_date: '2022/07/03'
@@ -105,7 +105,7 @@ activity2.save
 
 activity3 = Activity.new(
   title: 'Movie night at the cinema',
-  activity_type: 'Cinema',
+  activity_type: 'Movies',
   description: 'What should we watch at the cinema and where?',
   activity_date: '2022/06/10',
   deadline_date: '2022/06/03'
@@ -120,7 +120,7 @@ activity3.save
 
 activity4 = Activity.new(
   title: 'Private dance class at home',
-  activity_type: 'Dance',
+  activity_type: 'Entertainment',
   description: 'I want to bring a dance instructor to the house! What type of dance should we learn?',
   activity_date: '2022/06/20',
   deadline_date: '2022/06/10'
@@ -135,7 +135,7 @@ activity4.save
 
 activity5 = Activity.new(
   title: 'MMA fight night',
-  activity_type: 'Combat Sports',
+  activity_type: 'Entertainment',
   description: 'I want to go and watch grown men wrestle and beat the shit out of each other!',
   activity_date: '2022/08/20',
   deadline_date: '2022/07/10'
@@ -210,7 +210,7 @@ activity9.save
 
 activity10 = Activity.new(
   title: 'Rock climbing trip',
-  activity_type: 'Sports',
+  activity_type: 'Traveling',
   description: 'Only the best climbers can join. Where should we go?',
   activity_date: '2022/06/30',
   deadline_date: '2022/06/20'
@@ -225,7 +225,7 @@ activity10.save
 
 activity11 = Activity.new(
   title: 'Night out in chinatown!',
-  activity_type: 'Restaurant',
+  activity_type: 'Food',
   description: 'I really want to eat some chinese food. What do you think?',
   activity_date: '2022/07/31',
   deadline_date: '2022/07/20'
@@ -240,7 +240,7 @@ activity11.save
 
 activity12 = Activity.new(
   title: 'Tour de France',
-  activity_type: 'Sports',
+  activity_type: 'Travelling',
   description: 'I really want to go to the Tour de France.',
   activity_date: '2022/10/18',
   deadline_date: '2022/10/01'
@@ -255,7 +255,7 @@ activity12.save
 
 activity13 = Activity.new(
   title: 'Formula One racing',
-  activity_type: 'Sports',
+  activity_type: 'Entertainment',
   description: 'I really want to go see Lewis Hamilton racing.',
   activity_date: '2022/11/18',
   deadline_date: '2022/08/01'
@@ -294,7 +294,7 @@ puts "Creating proposals..."
 
 proposal1 = Proposal.new(
   title: 'Hasenheide',
-  description: 'I really love dangerous parks full of drug dealers. '
+  description: 'I really love dangerous parks full of drug dealers.'
 )
 
 proposal1.user = user1
@@ -303,7 +303,7 @@ proposal1.save
 
 proposal2 = Proposal.new(
   title: 'Tiergarten',
-  description: '<p>Easily the most beautiful park in Berlin.</p> '
+  description: 'Easily the most beautiful park in Berlin.'
 )
 
 proposal2.user = user2
