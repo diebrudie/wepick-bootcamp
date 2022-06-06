@@ -8,7 +8,9 @@ class ActivitiesController < ApplicationController
     @form_title = "Create new Activity"
   end
 
-  def show; end
+  def show
+    @participants = Participant.where(activity_id: @activity.id)
+  end
 
   def create
     @activity = Activity.new(activity_params)
