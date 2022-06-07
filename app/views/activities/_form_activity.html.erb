@@ -61,11 +61,15 @@
           <div class="form-act__toggle-row">
           <div class="form-act__tottle-text">Make proposals anonymous</div>
             <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="anonymity">
+              <%= a.input :anonymity, :as => :boolean, label: false, :input_html => { class: "form-check-input", id: "flexSwitchCheckDefault"  } %>
             </div>
           </div>
         </div>
-        <%= a.button :submit, "Done", class: "top-elements__btn is--act-done w-inline-block" %>
+        <% if params[:action] == 'index' %>
+          <%= a.button :submit, "Done", class: "top-elements__btn is--act-done w-inline-block" %>
+        <% else %>
+          <%= a.button :submit, "Update", class: "top-elements__btn is--act-done is--update w-inline-block" %>
+        <% end %>
       <% end %>
     </div>
     <% if @activity.id %>
