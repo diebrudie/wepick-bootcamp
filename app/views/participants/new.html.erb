@@ -1,23 +1,23 @@
 <h1>WELCOME TO THE NEW</h1>
 
-<% @friendships.each do |friendship| %>
-  <% if friendship.asker == current_user %>
-    <% @friends.push(friendship.receiver.username) %>
-    <%=friendship.receiver.username  %>
-    <%= button_to "ADD FRIEND", activity_participants_path(activity: @activity, participant: friendship.receiver ) %>
-  <% else %>
-    <% @friends.push(friendship.asker.username)  %>
-    <%= friendship.asker.username %>
-    <%= button_to "ADD FRIEND", activity_participants_path(activity: @activity, participant: friendship.receiver ) %>
-  <% end %>
+<% @friends.each do |friend| %>
+    <%=friend.username  %>
+    <%= button_to "ADD FRIEND", activity_participants_path(activity: @activity, participant: friend ) %>
+      
 <% end %>
 
-  <% @friends.each do |friend| %>
-  <%= friend %>
-  <% end %>
+<%# @friendships.each do |friendship| %>
+
+  <%# @activity.participants.each do |activity| %>
+    <%#= friendship.receiver.username unless friendship.receiver.id == activity.user.id %>
+  <%# end %>
+<%# end %>
+  <%# @friends.each do |friend| %>
+  <%#= friend %>
+  <%# end %>
 
 
-<%= simple_form_for([@activity, @participant]) do |f| %>
-  <%= f.input :user, collection: @friends%>
-  <%= f.submit %>
-<% end %>
+<%#= simple_form_for([@activity, @participant]) do |f| %>
+  <%#= f.input :user, collection: @friends%>
+  <%#= f.submit %>
+<%# end %>
