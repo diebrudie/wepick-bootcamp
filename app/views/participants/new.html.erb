@@ -2,8 +2,8 @@
 
 <% @friends.each do |friend| %>
     <%=friend.username  %>
-    <%= button_to "ADD FRIEND", activity_participants_path(activity: @activity, participant: friend ) %>
-      
+    <%= button_to "ADD FRIEND", activity_participants_path(activity: @activity, user: friend ) %>
+
 <% end %>
 
 <%# @friendships.each do |friendship| %>

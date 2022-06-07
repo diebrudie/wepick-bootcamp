@@ -64,6 +64,19 @@ file4 = URI.open("app/assets/images/users/sergio.jpeg")
 user4.photo.attach(io: file4, filename: "sergio.jpeg", content_type: "image/jpeg")
 user4.save
 
+user5 = User.new(
+  first_name: 'Mario',
+  last_name: 'Leonel',
+  username: 'TheGoat',
+  email: 'Mario@wepick.com',
+  password: '123456'
+)
+
+file5 = URI.open("app/assets/images/users/mario.jpeg")
+
+user5.photo.attach(io: file5, filename: "mario.jpeg", content_type: "image/jpeg")
+user5.save
+
 puts "Finished creating users!"
 
 # ACTIVITY TIME BABYYYYY
@@ -407,6 +420,11 @@ Participant.destroy_all
 
 puts "Creating participants..."
 
+participant1 = Participant.new
+participant1.user = user5
+participant1.activity = activity1
+participant1.save
+
 user_array = [user1, user2, user3, user4]
 
 user_array.each do |user|
@@ -457,6 +475,21 @@ puts "Destroying friendships..."
 Friendship.destroy_all
 
 puts "Creating friendships..."
+
+friendship1 = Friendship.new
+friendship1.asker_id = 1
+friendship1.receiver_id = 5
+friendship1.save
+
+friendship1 = Friendship.new
+friendship1.asker_id = 2
+friendship1.receiver_id = 5
+friendship1.save
+
+friendship1 = Friendship.new
+friendship1.asker_id = 3
+friendship1.receiver_id = 5
+friendship1.save
 
 friendship1 = Friendship.new
 friendship1.asker_id = 1
