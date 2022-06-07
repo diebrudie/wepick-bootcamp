@@ -7,12 +7,14 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :profiles, only: %i[show edit update]
   get "friends", to: "friendships#index", as: :friendships
-  get "friends/:id", to: "friendships#show", as: :friendships_show
   resources :activities do
-    resources :participants, only: :create
-    resources :proposals, only: %i[show new create edit update] do
-      post "vote_toggle", to: "votes#toggle", as: :vote_toggle
-    end
+    resources :participants, only: %i[index create new]
+    resources :proposals, only: %i[show new create edit update]
   end
-  resources :proposals, only: :destroy
+
+  resources :proposals, only: :destroy do
+    resources :votes, only: %i[create]
+  end
+
+  resources :votes, only: %i[destroy]
 end

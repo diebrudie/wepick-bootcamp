@@ -64,4 +64,35 @@
     color: #a5a5a5;
     font-size: 13px;
   }
+
+  .search-form {
+    overflow: hidden;
+    width: 0%;
+    position: absolute;
+    left: 0px;
+    transition: all 200ms ease;
+  }
+
+  .search-form.is--active {
+    width: 89%;
+    left: 43px;
+  }
+
+  .form-control {
+    background-color: white !important;
+    border-radius: 42px !important;
+  }
+
+  .add-activity {
+    height: 36px;
+  }
+
+  .search-activity {
+    height: 36px;
+  }
+
+  .title-space {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }

@@ -4,6 +4,7 @@ class ActivitiesController < ApplicationController
   def index
     @activities_user = Activity.all.where("user_id = #{current_user.id}")
     @participants_user = Activity.joins(:participants).where(participants: { user_id: current_user.id }).where.not(id: @activities_user.map {|activity| activity.id})
+    @join_array = (@activities_user + @participants_user).sort_by(&:activity_date)
     @activity = Activity.new
     @form_title = "Create new Activity"
 
@@ -19,7 +20,9 @@ class ActivitiesController < ApplicationController
 
   end
 
-  def show; end
+  def show
+    @participants = Participant.where(activity_id: @activity.id)
+  end
 
   def create
     @activity = Activity.new(activity_params)

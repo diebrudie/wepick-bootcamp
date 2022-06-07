@@ -26,6 +26,7 @@ class ProposalsController < ApplicationController
     # No need for app/views/restaurants/destroy.html.erb
     redirect_to activity_path(@activity), status: :see_other
   end
+
   private
 
   def proposal_params

@@ -1,17 +1,22 @@
-<section class="section">
-  <div class="l-container is--home">
-    <h1 class="home__h1">Organize activites with your friends, propose your ideas and vote!</h1>
-    <div class="home__subheadline">Group decisions made easier</div>
-    <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_h1bogema.json" background="transparent" class="home__lottie" speed="1" loop autoplay></lottie-player>
-    <div class="home__btns-wrp">
-      <a href="#" class="button is--inverted w-inline-block">
-        <div>Login</div>
-      </a>
-      <a href="#" class="button w-inline-block">
-        <div>Signup</div>
-      </a>
+<% if user_signed_in? %>
+  <%= link_to "welcome home", activities_path, class: "btn btn-primary" %>
+<% else %>
+  <section class="section">
+    <div class="l-container is--home">
+      <h1 class="home__h1">Organize activites with your friends, propose your ideas and vote!</h1>
+      <div class="home__subheadline">Group decisions made easier</div>
+      <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_h1bogema.json" background="transparent" class="home__lottie" speed="1" loop autoplay></lottie-player>
+      <div class="home__btns-wrp">
+        <%= link_to new_user_session_path, class:"button is--inverted w-inline-block" do %>
+          <div>Login</div>
+        <% end %>
+        <%= link_to new_user_registration_path, class:"button w-inline-block" do %>
+          <div>Signup</div>
+        <% end %>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<%= link_to 'Sign out', destroy_user_session_path, data: {turbo_method: :delete} %>
+  <%= link_to 'Sign out', destroy_user_session_path, data: {turbo_method: :delete} %>
+<% end %>
