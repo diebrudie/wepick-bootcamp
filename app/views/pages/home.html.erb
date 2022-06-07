@@ -4,11 +4,12 @@
     <div class="home__subheadline">Group decisions made easier</div>
     <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_h1bogema.json" background="transparent" class="home__lottie" speed="1" loop autoplay></lottie-player>
     <div class="home__btns-wrp">
-      <a href="#" class="button is--inverted w-inline-block">
+      <%= link_to new_user_session_path, class:"button is--inverted w-inline-block" do %>
         <div>Login</div>
-      </a>
-      <a href="#" class="button w-inline-block">
+      <% end %>
+      <%= link_to new_user_registration_path, class:"button w-inline-block" do %>
         <div>Signup</div>
+      <% end %>
       </a>
     </div>
   </div>
