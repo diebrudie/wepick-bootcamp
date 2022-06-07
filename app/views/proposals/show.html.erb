@@ -14,8 +14,8 @@
 
     <div class="proposals-index__votes-wrp">
       <% if @proposal.votes.pluck(:user_id).include?(current_user.id) %>
-        <% vote = proposal.votes.find_by(user_id: current_user.id) %>
-        <%= link_to vote_path(vote), class:"proposals-index__votes-wrp", data: { turbo_method: :delete } do %>
+        <% vote = @proposal.votes.find_by(user_id: current_user.id) %>
+        <%= link_to activity_proposal_path(@proposal), class:"proposals-index__votes-wrp", data: { turbo_method: :delete } do %>
             <%= image_tag "icon-up-like-filled.svg", alt: "up voted icon", loading: "lazy", class: "proposals-index__vote-arrow filled"%>
             <%= image_tag "icon-up-like-empty.svg", alt: "not voted icon", loading: "lazy", class: "proposals-index__vote-arrow empty is--inactive"%>
               <div class="proposals-index__vote-number"><%= @proposal.votes.count %></div>

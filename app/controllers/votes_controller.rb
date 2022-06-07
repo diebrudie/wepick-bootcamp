@@ -6,7 +6,7 @@ class VotesController < ApplicationController
     @vote.user = current_user
     @vote.proposal = @proposal
     @vote.save
-    redirect_to activity_path(@proposal.activity)
+    redirect_back(fallback_location: activity_path(@proposal.activity))
   end
 
   def destroy
