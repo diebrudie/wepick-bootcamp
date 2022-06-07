@@ -13,10 +13,8 @@ application.register("hello", HelloController)
 import RefreshListController from "./refresh_list_controller.js"
 application.register("refresh-list", RefreshListController)
 
-import HelloController from "./hello_controller.js"
-application.register("hello", HelloController)
-
 import ProposalFormController from "./proposal_form_controller.js"
 application.register("proposal-form", ProposalFormController)
+
 import VotesController from "./votes_controller.js"
 application.register("votes", VotesController)
