@@ -2,7 +2,9 @@
 
 <br>
 <br>
-<h1><%= @proposal.title %></h1>
+
+<h1 class="proposal-title"><%= @proposal.title %></h1>
+
 <br>
 
   <div class="grid-container">
@@ -16,11 +18,10 @@
   </div>
 
   <br>
-  <br>
 
    <p class="description-text">Description</p>
    <br>
-    <div class="description-container">
+    <div class="description-container px-3">
       <%= @proposal.description %>
     </div>
   <br>
@@ -34,3 +35,6 @@
     <% end  %>
   </div>
 </div>
+
+<br>
+<br>
