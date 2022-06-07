@@ -1,17 +1,18 @@
 <%# http://localhost:3000/activities/1/proposals/1 %>
+<div class="px-2">
 
+<br>
 <br>
 <h1><%= @proposal.title %></h1>
 <br>
 
-<div class="px-2">
   <div class="grid-container">
     <div class="look-at-the-activity-type">
     <%= @activity.activity_type %>
     </div>
 
     <div class="display-current-voting">
-    2. BeataToDo: Add voting
+    2. ToDo: Add voting once ready
     </div>
   </div>
 
@@ -27,7 +28,7 @@
   <br>
 
   <div class="grid-container">
-  <%= button_to "Go back to activity", activity_path(@activity) %>
-  <%= button_to "Delete this proposal", proposal_path(@proposal), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <%= link_to "Go back to activity", activity_path(@activity), class: "btn-proposal1" %>
+  <%= link_to "Delete this proposal", proposal_path(@proposal), class: "btn-proposal2", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   </div>
 </div>
