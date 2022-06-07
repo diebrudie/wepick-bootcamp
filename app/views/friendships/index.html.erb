@@ -1,3 +1,14 @@
+<% def part_of(user_one, user_two) %>
+  <% x = user_one.participants.map do |participant| %>
+    <% participant.activity_id %>
+  <% end %>
+  <% y = user_two[0].participants.map do |participant| %>
+    <% participant.activity_id %>
+  <% end %>
+  <% z = x & y # => [2, 4] %>
+  <% z.count %>
+ <% end %>
+
 <section class="section">
   <div class="l-container is--min-100vh">
     <div class="index-friends">
@@ -15,18 +26,18 @@
       </div>
       <div class="friends">
         <% @friendships.each do |friendship| %>
+        <%# ATTENTION HACKY STUFF %>
+
+        <%# <% END HACKY STUFF %>
           <% if friendship.asker == current_user %>
+
               <%= link_to profile_path(friendship.receiver.id), class: "friends__box w-inline-block" do %>
                 <div class="friends__img-wrp">
                   <%= cl_image_tag(friendship.receiver.photo.key, alt: "friend profile image", class: "friends__img", loading: "lazy") %>
                 </div>
                   <div class="friends__content-wrp">
                     <div class="friends__title"><%= friendship.receiver.first_name %> <%= friendship.receiver.last_name %></div>
-                    <div class="friends__subheadline">2 activities in common
-                    <br>
-                      Total activities from <%= friendship.receiver.username %>:<%= friendship.receiver.activities.size %>
-                    <br>
-                      Total activities from <%= friendship.asker.username %>:<%= friendship.asker.activities.size %>
+                    <div class="friends__subheadline"><%= part_of(current_user, User.where(id: friendship.receiver.id)) %> activities in common
                     </div>
                   </div>
               <% end %>
