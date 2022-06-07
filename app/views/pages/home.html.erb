@@ -1,17 +1,19 @@
 <% if user_signed_in? %>
   <br>
   <br>
-  <div class = "px-2">
-    <p>Hello <%= current_user.first_name %>!
+  <br>
+  <div class = "px-3">
+    <h1 class="personalized-header">Hello <%= current_user.first_name %>!</h1>
     <br>
     <br>
-    Welcome back to our app!
+    <p class="greeting">Welcome back to our app!
     <br>
-    You may now invite your friends to all kinds of awesome activities! You won't regret it!</p>
+    You may now invite your friends to all kinds of awesome activities!</p>
     <br>
-    <%= link_to "Discover all of your activities!", activities_path, class: "btn-signup" %>
+    <%= link_to "Discover all activities!", activities_path, class: "btn-signup" %>
     <br>
-    <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_ypej3gd9.json">
+    <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_ypej3gd9.json" background="lightgrey" speed="1" style="auto" loop controls autoplay></lottie-player>
+    <%= link_to 'Sign out', destroy_user_session_path, data: {turbo_method: :delete} %>
   </div>
 
 <% else %>
