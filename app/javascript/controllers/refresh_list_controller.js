@@ -5,7 +5,7 @@ export default class extends Controller {
 
   connect() {
     console.log(this.formTarget);
-    console.log(this.searchIconTarget);
+    console.log(this.searchInput);
   }
   update() {
     const url = `${this.formTarget.action}?query=${this.searchInputTarget.value}`
@@ -18,6 +18,13 @@ export default class extends Controller {
 
   openSearch(e){
     e.preventDefault();
-    this.formTarget.classList.add('is--active');
+    this.formTarget.classList.toggle('is--active');
+    //document.querySelector(".form-control").focus();
   }
+
+  closeSearch(e){
+    e.preventDefault();
+    this.formTarget.classList.remove('is--active');
+  }
+
 }
