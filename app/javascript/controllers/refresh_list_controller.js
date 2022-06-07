@@ -18,6 +18,12 @@ export default class extends Controller {
 
   openSearch(e){
     e.preventDefault();
-    this.formTarget.classList.add('is--active');
+    this.formTarget.classList.toggle('is--active');
   }
+
+  closeSearch(e){
+    e.preventDefault();
+    this.formTarget.classList.remove('is--active');
+  }
+
 }
