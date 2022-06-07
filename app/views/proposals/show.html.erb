@@ -1,10 +1,53 @@
-<h1><%= @proposal.title %></h1>
+<div class="px-2">
+
 <br>
-<%= @proposal.description.to_plain_text %>
+<br>
+
+<h1 class="proposal-title"><%= @proposal.title %></h1>
+
+<br>
+
+  <div class="grid-container">
+    <div class="look-at-the-person">
+    Proposed by <%= @proposal.user.first_name %>
+    </div>
+
+    <div class="proposals-index__votes-wrp">
+      <% if @proposal.votes.pluck(:user_id).include?(current_user.id) %>
+        <% vote = @proposal.votes.find_by(user_id: current_user.id) %>
+        <%= link_to activity_proposal_path(@proposal), class:"proposals-index__votes-wrp", data: { turbo_method: :delete } do %>
+            <%= image_tag "icon-up-like-filled.svg", alt: "up voted icon", loading: "lazy", class: "proposals-index__vote-arrow filled"%>
+            <%= image_tag "icon-up-like-empty.svg", alt: "not voted icon", loading: "lazy", class: "proposals-index__vote-arrow empty is--inactive"%>
+              <div class="proposals-index__vote-number"><%= @proposal.votes.count %></div>
+            <% end %>
+      <% else %>
+        <%= link_to proposal_votes_path(@proposal), class:"proposals-index__votes-wrp", data: { turbo_method: :post } do %>
+            <%= image_tag "icon-up-like-filled.svg", alt: "up voted icon", loading: "lazy", class: "proposals-index__vote-arrow filled is--inactive"%>
+            <%= image_tag "icon-up-like-empty.svg", alt: "not voted icon", loading: "lazy", class: "proposals-index__vote-arrow empty"%>
+              <div class="proposals-index__vote-number"><%= @proposal.votes.count %></div>
+            <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <br>
+
+   <p class="description-text">Description</p>
+   <br>
+    <div class="description-container px-3">
+      <%= @proposal.description %>
+    </div>
+  <br>
+  <br>
+
+  <div class="grid-container">
+  <%= link_to "Go back to activity", activity_path(@activity), class: "btn-proposal1" %>
+
+  <%  if current_user == @proposal.user %>
+    <%= link_to "Delete this proposal", proposal_path(@proposal), class: "btn-proposal2", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <% end  %>
+  </div>
+</div>
+
 <br>
 <br>
-<%= link_to "Activity", activity_path(@activity), class:"btn btn-light" %>
-<%= link_to "Delete",
-  proposal_path(@proposal),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
