@@ -32,6 +32,4 @@ class ProposalsController < ApplicationController
   def proposal_params
     params.require(:proposal).permit(:title, :description)
   end
-
-
 end

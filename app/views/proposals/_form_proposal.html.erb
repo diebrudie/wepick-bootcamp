@@ -5,13 +5,13 @@
       <%= link_to image_tag("icon-arrow-back-black.svg", alt: "back button", class: "top-elements__icon", loading: "lazy"), activity_path(@activity), class: "top-elements__btn-left is--back-arrow w-inline-block" %>
       </div>
       <div class="top-elements__title">
-        <% if params[:action] == 'new' %>
-          Add new Proposal
-        <% else %>
-          Proposal Settings
-        <% end %>
+          <% if params[:action] == 'new' %>
+            Add new Proposal
+          <% else %>
+            Proposal Settings
+          <% end %>
+        </div>
       </div>
-    </div>
 
     <div class="form-prop">
       <%= simple_form_for([@activity, @proposal]) do |a| %>
