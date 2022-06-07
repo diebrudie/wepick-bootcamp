@@ -62,7 +62,7 @@
     <%= image_tag "icon-notifications-active.svg", alt: "News Page", class: "nav__btn-icon is--inactive" %>
     <div class="nav__btn-title">Notifications</div>
   <% end %>
-  <%= link_to activities_path, class:"nav__btn w-inline-block" do %>
+  <%= link_to profile_path(current_user), class:"nav__btn w-inline-block" do %>
     <div class="nav__btn-icon is--profile">
       <%= cl_image_tag(current_user.photo.key, alt: "Profile image", class: "nav__profile-img", loading: "lazy") %>
     </div>
