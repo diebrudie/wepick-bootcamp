@@ -3,6 +3,7 @@ class FriendshipsController < ApplicationController
 
   def index
     @friendships = Friendship.where(asker: current_user).or(Friendship.where(receiver: current_user))
+    @taking_part = current_user.participant_ids
   end
 
   def show; end
