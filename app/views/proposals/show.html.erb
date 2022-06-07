@@ -12,7 +12,7 @@
     Proposed by <%= @proposal.user.first_name %>
     </div>
 
-    <div class="display-current-voting">
+    <div class="proposals-index__votes-wrp">
       <% if @proposal.votes.pluck(:user_id).include?(current_user.id) %>
         <% vote = proposal.votes.find_by(user_id: current_user.id) %>
         <%= link_to vote_path(vote), class:"proposals-index__votes-wrp", data: { turbo_method: :delete } do %>
