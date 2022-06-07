@@ -38,10 +38,6 @@
                   <div class="friends__content-wrp">
                     <div class="friends__title"><%= friendship.receiver.first_name %> <%= friendship.receiver.last_name %></div>
                     <div class="friends__subheadline"><%= part_of(current_user, User.where(id: friendship.receiver.id)) %> activities in common
-                    <br>
-                      Total activities from <%= friendship.receiver.username %>:<%= friendship.receiver.activities.size %>
-                    <br>
-                      Total activities from <%= friendship.asker.username %>:<%= friendship.asker.activities.size %>
                     </div>
                   </div>
               <% end %>
