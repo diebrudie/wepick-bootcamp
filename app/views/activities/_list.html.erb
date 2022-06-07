@@ -1,6 +1,5 @@
 <div data-refresh-list-target="list">
   <div class="top-elements__title">Your Activities</div>
-  <div class="activities__date">Hosting</div>
   <div class="activities">
     <% activities.each do |activity| %>
         <%= link_to activity_path(activity), class:"activities__box" do %>
@@ -14,7 +13,6 @@
         <% end %>
     <% end %>
   </div>
-  <div class="activities__date">Participating</div>
   <div class="activities">
     <% participants_user.each do |activity| %>
         <%= link_to activity_path(activity), class:"activities__box" do %>
