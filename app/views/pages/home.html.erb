@@ -1,5 +1,19 @@
 <% if user_signed_in? %>
-  <%= link_to "welcome home", activities_path, class: "btn btn-primary" %>
+  <br>
+  <br>
+  <div class = "px-2">
+    <p>Hello <%= current_user.first_name %>!
+    <br>
+    <br>
+    Welcome back to our app!
+    <br>
+    You may now invite your friends to all kinds of awesome activities! You won't regret it!</p>
+    <br>
+    <%= link_to "Discover all of your activities!", activities_path, class: "btn-signup" %>
+    <br>
+    <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_ypej3gd9.json">
+  </div>
+
 <% else %>
   <section class="section">
     <div class="l-container is--home">
