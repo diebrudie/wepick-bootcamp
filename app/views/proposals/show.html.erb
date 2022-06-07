@@ -7,8 +7,8 @@
 <br>
 
   <div class="grid-container">
-    <div class="look-at-the-activity-type">
-    <%= @activity.activity_type %>
+    <div class="look-at-the-person">
+    Proposed by <%= @proposal.user %>
     </div>
 
     <div class="display-current-voting">
@@ -22,7 +22,7 @@
    <p class="description-text">Description</p>
    <br>
     <div class="description-container">
-      <%= @proposal.description.to_plain_text %>
+      <%= @proposal.description %>
     </div>
   <br>
   <br>
