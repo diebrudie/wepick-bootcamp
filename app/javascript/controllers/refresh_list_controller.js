@@ -4,10 +4,8 @@ export default class extends Controller {
   static targets = [ "form", "list", "searchInput" ]
 
   connect() {
-    console.log(this.element);
     console.log(this.formTarget);
-    console.log(this.listTarget);
-    console.log(this.searchInputTarget);
+    console.log(this.searchIconTarget);
   }
   update() {
     const url = `${this.formTarget.action}?query=${this.searchInputTarget.value}`
@@ -16,5 +14,10 @@ export default class extends Controller {
       .then((data) => {
         this.listTarget.outerHTML = data;
       })
+  }
+
+  openSearch(e){
+    e.preventDefault();
+    this.formTarget.classList.add('is--active');
   }
 }

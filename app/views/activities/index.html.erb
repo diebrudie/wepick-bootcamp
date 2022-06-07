@@ -4,7 +4,7 @@
       <div class="index-act" data-controller="refresh-list">
         <div class="top-elements">
           <div class="top-elements__back-done">
-            <a href="#" class="top-elements__btn-left is--search w-inline-block">
+            <a href="#" class="top-elements__btn-left is--search w-inline-block" data-action="click->refresh-list#openSearch">
               <%= image_tag "icon-search.svg", alt: "search icon", class: "top-elements__icon", loading: "lazy" %>
             </a>
             <div>
