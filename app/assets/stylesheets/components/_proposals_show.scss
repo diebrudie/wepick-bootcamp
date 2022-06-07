@@ -1,0 +1,58 @@
+.proposal-title {
+  font-size: 24px;
+}
+
+.grid-container {
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 50px;
+}
+
+.look-at-the-person {
+color:	#989898;
+}
+
+.arrow-symbol {
+width: 10%;
+height: 80%;
+float: right;
+}
+
+.description-text {
+font-size: 16px;
+font-weight: bold;
+}
+
+.description-container a {
+  text-decoration: underline;
+  color:darkblue;
+}
+
+.description-container {
+border-style: ridge;
+padding: 15px;
+font-size: 12px;
+overflow: hidden;
+}
+
+.trix-content h1 {
+  font-size: 12px;
+}
+
+.trix-content img {
+  max-width: 95%;
+}
+.trix-content pre {
+  white-space: pre-wrap;
+}
+
+.trix-content .attachment__name {
+  display: none;
+}
+.attachment__size {
+  display: none;
+}
+
+// .attachment__caption {
+//   display: none;
+// }

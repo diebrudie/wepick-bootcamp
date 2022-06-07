@@ -13,6 +13,7 @@
                                 class: "form-control",
                                 placeholder: 'Type activity name!',
                                 value: params[:query],
+                                autofocus: true,
                                 data: {
                                   refresh_list_target: 'searchInput',
                                   action: "keyup->refresh-list#update blur->refresh-list#openSearch"} %>
@@ -26,20 +27,7 @@
         <div data-refresh-list-target="list">
           <div class="top-elements__title title-space">Your Activities</div>
           <div class="activities">
-            <% @activities_user.each do |activity| %>
-                <%= link_to activity_path(activity), class:"activities__box" do %>
-                    <div class="activities__img-wrp">
-                      <%= cl_image_tag(activity.photo.key, alt: "activity image", class: "activities__img", loading: "lazy") %>
-                    </div>
-                    <div class="activities__content-wrp">
-                      <div class="activities__title"><%= activity.title %></div>
-                      <div class="activities__date"><%= activity.activity_date.strftime('%A, %d %B %Y') %></div>
-                    </div>
-                <% end %>
-            <% end %>
-          </div>
-          <div class="activities">
-            <% @participants_user.each do |activity| %>
+            <% @join_array.each do |activity| %>
                 <%= link_to activity_path(activity), class:"activities__box" do %>
                     <div class="activities__img-wrp">
                       <%= cl_image_tag(activity.photo.key, alt: "activity image", class: "activities__img", loading: "lazy") %>

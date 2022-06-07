@@ -1,28 +1,33 @@
-<h2 class="text-center">Hello again!</h2>
-<p class="text-center">Welcome back, you were missed.</p>
-<br></br>
+<section class="section">
+  <div class="l-container">
+    <div class="login__content-wrp">
+      <h2 class="text-center">Hello again!</h2>
+      <p class="text-center">Welcome back, you were missed.</p>
+    </div>
 
-<div class="px-2">
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    <div class="px-2">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" } %>
+        <%= f.input :password,
+                    required: false,
+                    input_html: { autocomplete: "current-password" } %>
+        <%= f.input :remember_me, as: :boolean, class: "remember-me" if devise_mapping.rememberable? %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Log in", class: "btn-login w-100 button-font-fix" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+    </div>
+
+    <div class="login__lottie">
+    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_f2jo61ci.json" background="transparent" class="login__lottie" speed="1" loop autoplay></lottie-player>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in", class: "btn-login w-100 button-font-fix" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-</div>
-
-<div>
-  <%= image_tag asset_path("login/hellopicture2.png"), class: "login-picture"%>
-</div>
+</section>
