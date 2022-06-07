@@ -24,8 +24,8 @@
         <div class="top-elements__title is--activity-show"><%= @activity.title %></div>
         <div class="activity-show__flex-wrp">
           <div class="activity-show__happening">Happening in 10 days</div>
-          <a href="#" class="activity-show__participants w-inline-block">
-            <div class="activity-show__participants-text">0 partcipants</div>
+          <a href="#" class="activity-show__participants w-inline-blo%ck">
+            <%= link_to "#{@participants.count} participants", activity_participants_path(@activity), class: "activity-show__participants-text" %>
           </a>
         </div>
         <div class="activity-show__description"><%= @activity.description %></div>

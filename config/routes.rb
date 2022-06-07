@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :profiles, only: %i[show edit update]
   get "friends", to: "friendships#index", as: :friendships
   resources :activities do
-    resources :participants, only: :create
+    resources :participants, only: %i[index create new]
     resources :proposals, only: %i[show new create edit update]
   end
 
