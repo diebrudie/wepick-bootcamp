@@ -1,16 +1,18 @@
 class VotesController < ApplicationController
-  before_action :find_proposal, only: %i[create destroy]
+  before_action :find_proposal, only: %i[create]
 
   def create
-    @vote = Vote.new(review_params)
+    @vote = Vote.new
     @vote.user = current_user
     @vote.proposal = @proposal
     @vote.save
+    redirect_to activity_path(@proposal.activity)
   end
 
   def destroy
+    @vote = Vote.find(params[:id])
     @vote.destroy
-    # redirect_to activities_path, status: :see_other
+    redirect_to activity_path(@vote.proposal.activity), status: :see_other
   end
 
   private
@@ -19,7 +21,4 @@ class VotesController < ApplicationController
     @proposal = Proposal.find(params[:proposal_id])
   end
 
-  def vote_params
-    params.require(:vote).permit(:user_id, :proposal_id)
-  end
 end
