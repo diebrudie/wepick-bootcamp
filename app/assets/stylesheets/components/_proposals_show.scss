@@ -30,3 +30,14 @@ font-size: 12px;
 overflow: hidden;
 display: flex;
 }
+
+.trix-content img {
+  max-width: 95%;
+}
+.trix-content pre {
+  white-space: pre-wrap;
+}
+
+.trix-content .attachment__name {
+  display: none;
+}
