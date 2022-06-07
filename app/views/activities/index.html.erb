@@ -5,7 +5,7 @@
         <div class="top-elements">
           <div class="top-elements__back-done">
             <div class="top-elements__btn-left is--search" data-action="click->refresh-list#openSearch">
-              <%= image_tag "icon-search.svg", alt: "search icon", class: "top-elements__icon", loading: "lazy" %>
+              <%= image_tag "icon-search-black.svg", alt: "search icon", class: "top-elements__icon search-activity", loading: "lazy" %>
             </div>
             <div>
               <%= form_with url: activities_path, method: :get, html: { class: 'search-form', data: { refresh_list_target: 'form'}} do |f| %>
@@ -24,8 +24,7 @@
           </div>
         </div>
         <div data-refresh-list-target="list">
-          <div class="top-elements__title">Your Activities</div>
-          <div class="activities__date">Hosting</div>
+          <div class="top-elements__title title-space">Your Activities</div>
           <div class="activities">
             <% @activities_user.each do |activity| %>
                 <%= link_to activity_path(activity), class:"activities__box" do %>
@@ -39,7 +38,6 @@
                 <% end %>
             <% end %>
           </div>
-          <div class="activities__date">Participating</div>
           <div class="activities">
             <% @participants_user.each do |activity| %>
                 <%= link_to activity_path(activity), class:"activities__box" do %>
