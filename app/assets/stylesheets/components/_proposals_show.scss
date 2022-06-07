@@ -5,11 +5,17 @@ grid-gap: 50px;
 }
 
 .look-at-the-person {
-color:grey;
+color:	#989898;
 }
 
 .display-current-voting {
 
+}
+
+.arrow-symbol {
+width: 10%;
+height: 80%;
+float: right;
 }
 
 .description-text {
@@ -21,4 +27,6 @@ font-weight: bold;
 border-style: ridge;
 padding: 15px;
 font-size: 12px;
+overflow: hidden;
+display: flex;
 }

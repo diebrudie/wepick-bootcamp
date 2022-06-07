@@ -8,11 +8,11 @@
 
   <div class="grid-container">
     <div class="look-at-the-person">
-    Proposed by <%= @proposal.user %>
+    Proposed by <%= @proposal.user.first_name %>
     </div>
 
     <div class="display-current-voting">
-    2. ToDo: Add voting once ready
+      <%= image_tag asset_path("proposals/arrow.png"), class: "arrow-symbol"%>
     </div>
   </div>
 
@@ -29,6 +29,9 @@
 
   <div class="grid-container">
   <%= link_to "Go back to activity", activity_path(@activity), class: "btn-proposal1" %>
-  <%= link_to "Delete this proposal", proposal_path(@proposal), class: "btn-proposal2", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+  <%  if current_user == @proposal.user %>
+    <%= link_to "Delete this proposal", proposal_path(@proposal), class: "btn-proposal2", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <% end  %>
   </div>
 </div>
