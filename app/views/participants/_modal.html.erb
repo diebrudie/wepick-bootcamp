@@ -1,0 +1,26 @@
+<div class="modal fade" id="add_participant" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Add Participant</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body">
+        <% @friends.each do |friend| %>
+          <div class="friends__box is--add-participant">
+            <div class="participants__content-wrp">
+              <div class="friends__img-wrp">
+                <%= cl_image_tag(friend.photo.key, alt: "friend profile image", class: "friends__img", loading: "lazy") %>
+              </div>
+              <div class="friends__content-wrp">
+                <div class="friends__title"><%= friend.first_name %></div>
+              </div>
+            </div>
+            <%= link_to image_tag("icon-plus-purple.svg", alt: "add participant", class: "participants__add-remove", loading: "lazy"), new_activity_participant_path(activity, participant), data: {turbo_method: :post}, class: "participants__add-remove-wrp" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
