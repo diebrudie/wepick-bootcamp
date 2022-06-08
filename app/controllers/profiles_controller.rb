@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
   def show
-    @friendship = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 end

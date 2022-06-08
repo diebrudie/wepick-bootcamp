@@ -20,4 +20,11 @@ class User < ApplicationRecord
   validates :first_name, presence: { strict: true }
   validates :last_name, presence: { strict: true }
 
+  def part_of(user_one, user_two)
+    x = user_one.activity_ids
+    y = user_two.activity_ids
+    z = x & y # => [2, 4]
+    z.count
+  end
+
 end

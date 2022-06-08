@@ -1,5 +1,26 @@
 <% if user_signed_in? %>
-  <%= link_to "welcome home", activities_path, class: "btn btn-primary" %>
+  <section class="section">
+    <div class="l-container">
+      <h1 class="personalized-header">Hello <%= current_user.first_name %>!</h1>
+      <br>
+      <p class="greeting">Welcome to our app!
+      <br>
+      You may now invite your friends to all kinds of awesome activities!</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_YVgFFr.json" background="transparent" speed="1" loop autoplay></lottie-player>
+      <br>
+      <br>
+      <br>
+      <br>
+      <%= link_to "Discover all activities!", activities_path, class: "btn-interim" %>
+      <br>
+   </div>
+</section>
+
 <% else %>
   <section class="section">
     <div class="l-container is--home">
@@ -18,5 +39,5 @@
     </div>
   </section>
 
-  <%= link_to 'Sign out', destroy_user_session_path, data: {turbo_method: :delete} %>
+  <%#= link_to 'Sign out', destroy_user_session_path, data: {turbo_method: :delete} %>
 <% end %>
