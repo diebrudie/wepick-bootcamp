@@ -11,10 +11,11 @@ Rails.application.routes.draw do
     resources :participants, only: %i[index create new]
     resources :proposals, only: %i[show new create edit update]
   end
-
+  resources :participants, only: :destroy
   resources :proposals, only: :destroy do
     resources :votes, only: %i[create]
   end
 
   resources :votes, only: %i[destroy]
 end
+

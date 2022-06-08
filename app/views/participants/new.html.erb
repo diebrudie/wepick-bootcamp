@@ -2,9 +2,38 @@
 
 <% @friends.each do |friend| %>
     <%=friend.username  %>
-    <%= button_to "ADD FRIEND", activity_participants_path(activity: @activity, user: friend ) %>
+    <%= button_to "+", activity_participants_path(activity: @activity, user: friend ) %>
 
 <% end %>
+
+<section class="section">
+  <div class="l-container is--min-100vh">
+    <div class="index-friends">
+      <div class="top-elements">
+        <div class="top-elements__back-done">
+          <a href="#" class="top-elements__btn-left w-inline-block">
+            <%= image_tag "icon-search-black.svg", alt: "search friends", class: "top-elements__btn-icon search-friends", loading: "lazy" %>
+          </a>
+          <a href="#" class="top-elements__btn is--friend-invite w-inline-block">
+            <%= image_tag "icon-invite-friend-thin.png", alt: "invite friends", class: "top-elements__btn-icon invite-friend", loading: "lazy" %>
+            <div class="top-elements__btn-text is--invite-friends"></div>
+          </a>
+        </div>
+        <div class="top-elements__title">Friends</div>
+      </div>
+      <div class="friends">
+        <% @friends.each do |friend| %>
+          <div class="friends__img-wrp">
+            <%= cl_image_tag(friend.photo.key, alt: "friend profile image", class: "friends__img", loading: "lazy") %>
+          </div>
+          <div class="friends__content-wrp">
+            <div class="friends__title"><%= friend.first_name %> <%= friend.last_name %></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
 
 <%# @friendships.each do |friendship| %>
 

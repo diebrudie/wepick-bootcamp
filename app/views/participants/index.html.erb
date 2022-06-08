@@ -17,7 +17,9 @@
             </div>
             <div class="friends__title"><%= participant.user.first_name %></div>
           <% end %>
-            <%= link_to image_tag("icon-minus-remove-grey.svg", alt: "remove participant", class: "participants__add-remove", loading: "lazy"), activity_path(@activity), class: "participants__add-remove-wrp" %>
+            <%  if current_user == @activity.user %>
+              <%= link_to image_tag("icon-minus-remove-grey.svg", alt: "remove participant", class: "participants__add-remove", loading: "lazy"), participant_path(participant), data: {turbo_method: :delete}, class: "participants__add-remove-wrp" %>
+            <% end %>
         </div>
         <% end %>
       </div>
