@@ -63,18 +63,25 @@
           </a>
         </div>
         <div class="friend-profile__title">Activities in common</div>
-        <div class="friend-profile__activities-index">
-          <div class="activities__box">
-            <div class="activities__img-wrp">
-              <img src="images/img-halloween-01.jpeg" loading="lazy" alt="" class="activities__img"></div>
-            <div class="activities__content-wrp">
-              <div class="activities__title">Halloween Movie night</div>
-              <div class="activities__date">Friday, 31 October 2022</div>
+
+        <% @activities_together.each do |activity| %>
+          <div class="friend-profile__activities-index">
+            <div class="activities__box">
+              <div class="activities__img-wrp">
+                <%= cl_image_tag(activity.photo.key, alt: "activity image", class: "activities__img", loading: "lazy") %>
+                <%# <img src="images/img-halloween-01.jpeg" loading="lazy" alt="" class="activities__img"> %>
+              </div>
+              <div class="activities__content-wrp">
+                <div class="activities__title"><%= activity.title %></div>
+                <div class="activities__date"><%= activity.activity_date %></div>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
+
+
       </div>
-        <%= link_to "Remove friend", profile_path(@user), class: "profile__delete-btn" %>
+      <%= link_to "Remove friend", friends_path(id: @user), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this friend?" }, class: "profile__delete-btn" %>
     </div>
   </section>
 <% end %>
