@@ -10,7 +10,7 @@ class FriendshipsController < ApplicationController
 
   def destroy
     @friendship.destroy
-    redirect_to friendship_path(@friendship), status: :see_other
+    redirect_to friendships_path, status: :see_other
   end
 
   private

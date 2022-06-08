@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   end
 
   resources :votes, only: %i[destroy]
+  # resources :profiles, only: %i[destroy]
 end

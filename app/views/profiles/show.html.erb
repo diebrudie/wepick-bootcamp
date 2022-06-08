@@ -59,7 +59,7 @@
         </div>
         <div class="friend-profile__btns">
           <a href="#" class="friend-profile__btn w-inline-block">
-            <div>Add to an Activity</div>
+            <div>Invite to an Activity</div>
           </a>
         </div>
         <div class="friend-profile__title">Groups in common</div>
@@ -74,9 +74,7 @@
           </div>
         </div>
       </div>
-      <a href="#" class="friend-profile__delete-btn w-inline-block">
-        <div>Remove friend</div>
-      </a>
+        <%= link_to "Remove friend", profile_path(@user), class: "profile__delete-btn" %>
     </div>
   </section>
 <% end %>
