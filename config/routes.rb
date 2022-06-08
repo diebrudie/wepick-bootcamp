@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :profiles, only: %i[show edit update]
+  resources :profiles, only: %i[index show edit update]
   get "friends", to: "friendships#index", as: :friendships
   resources :activities do
     resources :participants, only: %i[index create new]
@@ -18,4 +18,3 @@ Rails.application.routes.draw do
 
   resources :votes, only: %i[destroy]
 end
-

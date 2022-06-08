@@ -11,9 +11,11 @@
             <%= link_to activities_path, class:"top-elements__btn-left is--back-activity-show w-inline-block" do %>
               <%= image_tag "icon-arrow-back-white.svg", alt: "back button", class: "top-elements__icon", loading: "lazy" %>
             <% end %>
+            <%  if current_user == @activity.user %>
             <a href="#" class="top-elements__btn is--settings w-inline-block" data-action="click->activity-form#openForm">
               <%= image_tag "icon-settings-white.svg", alt: "settings button", loading: "lazy" %>
             </a>
+            <% end %>
           </div>
           <div class="activity-show__profile">
             <%= cl_image_tag(@activity.photo.key, alt: "Activity image", class: "activity-show__profile-img", loading: "lazy") %>
@@ -23,7 +25,7 @@
       <div class="activity-show__details">
         <div class="top-elements__title is--activity-show"><%= @activity.title %></div>
         <div class="activity-show__flex-wrp">
-          <div class="activity-show__happening">Happening in 10 days</div>
+          <div class="activity-show__happening">Created by @<%= @activity.user.username %></div>
           <a href="#" class="activity-show__participants w-inline-blo%ck">
             <%= link_to "#{@participants.count} participants", activity_participants_path(@activity), class: "activity-show__participants-text" %>
           </a>
