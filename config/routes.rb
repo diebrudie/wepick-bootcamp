@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :profiles, only: %i[index show edit update]
   get "friends", to: "friendships#index", as: :friendships
+  delete "friends", to: "friendships#destroy"
   resources :activities do
     resources :participants, only: %i[index create new]
     resources :proposals, only: %i[show new create edit update]
@@ -17,4 +18,5 @@ Rails.application.routes.draw do
   end
 
   resources :votes, only: %i[destroy]
+  # resources :profiles, only: %i[destroy]
 end

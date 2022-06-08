@@ -77,6 +77,137 @@ file5 = URI.open("app/assets/images/users/mario.jpeg")
 user5.photo.attach(io: file5, filename: "mario.jpeg", content_type: "image/jpeg")
 user5.save
 
+user6 = User.new(
+  first_name: 'Ramil',
+  last_name: 'Assanov',
+  username: 'ramilio_genius',
+  email: 'Ramil@wepick.com',
+  password: '123456'
+)
+
+file6 = URI.open("app/assets/images/users/ramil.jpeg")
+
+user6.photo.attach(io: file6, filename: "ramil.jpeg", content_type: "image/jpeg")
+user6.save
+
+user7 = User.new(
+  first_name: 'Finn',
+  last_name: 'Michel',
+  username: 'finnius_maximus',
+  email: 'finn@wepick.com',
+  password: '123456'
+)
+
+file7 = URI.open("app/assets/images/users/finn.png")
+
+user7.photo.attach(io: file7, filename: "finn.png", content_type: "image/png")
+user7.save
+
+user8 = User.new(
+  first_name: 'James',
+  last_name: 'Hibbeard',
+  username: 'james_easy',
+  email: 'james@wepick.com',
+  password: '123456'
+)
+
+file8 = URI.open("app/assets/images/users/james.png")
+
+user8.photo.attach(io: file8, filename: "james.png", content_type: "image/png")
+user8.save
+
+user9 = User.new(
+  first_name: 'Kasper',
+  last_name: 'Albers',
+  username: 'kasper_the_friendly',
+  email: 'kasper@wepick.com',
+  password: '123456'
+)
+
+file9 = URI.open("app/assets/images/users/kasper.png")
+
+user9.photo.attach(io: file9, filename: "kasper.png", content_type: "image/png")
+user9.save
+
+user10 = User.new(
+  first_name: 'Lukas',
+  last_name: 'Biehl',
+  username: 'lukas_3000',
+  email: 'lukas@wepick.com',
+  password: '123456'
+)
+
+file10 = URI.open("app/assets/images/users/lukas.jpeg")
+
+user10.photo.attach(io: file10, filename: "lukas.jpeg", content_type: "image/jpeg")
+user10.save
+
+user11 = User.new(
+  first_name: 'Kaviya',
+  last_name: 'Dhanapal',
+  username: 'happy_kav',
+  email: 'kaviya@wepick.com',
+  password: '123456'
+)
+
+file11 = URI.open("app/assets/images/users/kaviya.jpeg")
+
+user11.photo.attach(io: file11, filename: "kaviya.jpeg", content_type: "image/jpeg")
+user11.save
+
+
+user12 = User.new(
+  first_name: 'Isabell',
+  last_name: 'Hammer',
+  username: 'blue_boo',
+  email: 'isabell@wepick.com',
+  password: '123456'
+)
+
+file12 = URI.open("app/assets/images/users/isabell.jpeg")
+
+user12.photo.attach(io: file12, filename: "isabell.jpeg", content_type: "image/jpeg")
+user12.save
+
+user13 = User.new(
+  first_name: 'Olivier',
+  last_name: 'Girardot',
+  username: 'bad_boy_olivier',
+  email: 'olivier@wepick.com',
+  password: '123456'
+)
+
+file13 = URI.open("app/assets/images/users/olivier.jpeg")
+
+user13.photo.attach(io: file13, filename: "olivier.jpeg", content_type: "image/jpeg")
+user13.save
+
+user14 = User.new(
+  first_name: 'Patrick',
+  last_name: 'Graham',
+  username: 'kebabking_1986',
+  email: 'patrick@wepick.com',
+  password: '123456'
+)
+
+file14 = URI.open("app/assets/images/users/patrick.jpeg")
+
+user14.photo.attach(io: file14, filename: "patrick.jpeg", content_type: "image/jpeg")
+user14.save
+
+user15 = User.new(
+  first_name: 'Lena',
+  last_name: 'Schneider',
+  username: 'schneiderling',
+  email: 'lena@wepick.com',
+  password: '123456'
+)
+
+file15 = URI.open("app/assets/images/users/lena.jpeg")
+
+user15.photo.attach(io: file15, filename: "lena.jpeg", content_type: "image/jpeg")
+user15.save
+
 puts "Finished creating users!"
 
 # ACTIVITY TIME BABYYYYY
