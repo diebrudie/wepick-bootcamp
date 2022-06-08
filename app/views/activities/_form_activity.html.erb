@@ -7,10 +7,10 @@
         </a>
       </div>
       <div class="top-elements__title">
-        <% if params[:action] == 'index' %>
-          Create new Activity
-        <% else %>
+        <% if @update %>
           Activity Settings
+        <% else %>
+          Create new Activity
         <% end %>
       </div>
     </div>
@@ -61,18 +61,14 @@
           <div class="form-act__toggle-row">
           <div class="form-act__tottle-text">Make proposals anonymous</div>
             <div class="form-check form-switch">
-<<<<<<< HEAD
-              <%= a.input :anonymity, :as => :boolean, label: false, :input_html => { :checked => "checked", class: "form-check-input", id: "flexSwitchCheckDefault"  } %>
-=======
               <%= a.input :anonymity, :as => :boolean, label: false, :input_html => { class: "form-check-input", id: "flexSwitchCheckDefault"  } %>
->>>>>>> master
             </div>
           </div>
         </div>
-        <% if params[:action] == 'index' %>
-          <%= a.button :submit, "Done", class: "top-elements__btn is--act-done w-inline-block" %>
-        <% else %>
+        <% if @update %>
           <%= a.button :submit, "Update", class: "top-elements__btn is--act-done is--update w-inline-block" %>
+        <% else %>
+          <%= a.button :submit, "Done", class: "top-elements__btn is--act-done w-inline-block" %>
         <% end %>
       <% end %>
     </div>
