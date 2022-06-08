@@ -15,6 +15,13 @@ class ParticipantsController < ApplicationController
     redirect_to activity_path(@activity)
   end
 
+  def destroy
+
+    @participant = Participant.find(params[:id])
+    @participant.destroy
+    redirect_to activity_participants_path(@participant.activity), status: :see_other
+  end
+
   def index
     @activity = Activity.find(params[:activity_id])
     @participants = Participant.where(activity_id: @activity.id)

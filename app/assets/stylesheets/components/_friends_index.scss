@@ -79,4 +79,31 @@
   .invite-friend {
     height: 36px;
   }
+
+  .friends__content-wrp.is--participants{
+    width: 67%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .participants__add-remove-wrp {
+    transition: all 200ms ease;
+  }
+
+  .participants__add-remove-wrp:active {
+    transform: scale(0.95);
+  }
+
+  .participants__add-remove {
+    width: 2.3em;
+    height: 2.3em;
+  }
+
+  .participants__content-wrp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    width: 90%;
+  }
 }
