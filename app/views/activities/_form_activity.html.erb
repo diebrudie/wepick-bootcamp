@@ -7,10 +7,10 @@
         </a>
       </div>
       <div class="top-elements__title">
-        <% if params[:action] == 'index' %>
-          Create new Activity
-        <% else %>
+        <% if @update %>
           Activity Settings
+        <% else %>
+          Create new Activity
         <% end %>
       </div>
     </div>
@@ -65,15 +65,15 @@
             </div>
           </div>
         </div>
-        <% if params[:action] == 'index' %>
-          <%= a.button :submit, "Done", class: "top-elements__btn is--act-done w-inline-block" %>
-        <% else %>
+        <% if @update %>
           <%= a.button :submit, "Update", class: "top-elements__btn is--act-done is--update w-inline-block" %>
+        <% else %>
+          <%= a.button :submit, "Done", class: "top-elements__btn is--act-done w-inline-block" %>
         <% end %>
       <% end %>
     </div>
     <% if @activity.id %>
-      <%= link_to "Delete Activity", activity_path(@activity), class: "friend-profile__delete-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this activity?" } %>
+      <%= link_to "Delete Activity", activity_path(@activity), class: "general__delete-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this activity?" } %>
     <% end %>
   </div>
 </div>

@@ -1,0 +1,23 @@
+<h1>WELCOME TO THE NEW</h1>
+
+<% @friends.each do |friend| %>
+    <%=friend.username  %>
+    <%= button_to "ADD FRIEND", activity_participants_path(activity: @activity, user: friend ) %>
+
+<% end %>
+
+<%# @friendships.each do |friendship| %>
+
+  <%# @activity.participants.each do |activity| %>
+    <%#= friendship.receiver.username unless friendship.receiver.id == activity.user.id %>
+  <%# end %>
+<%# end %>
+  <%# @friends.each do |friend| %>
+  <%#= friend %>
+  <%# end %>
+
+
+<%#= simple_form_for([@activity, @participant]) do |f| %>
+  <%#= f.input :user, collection: @friends%>
+  <%#= f.submit %>
+<%# end %>
