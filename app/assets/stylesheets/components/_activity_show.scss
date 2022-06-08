@@ -1,6 +1,6 @@
 @media screen and (max-width: 479px) {
   .l-container.is--activity-show {
-    min-height: 110vh;
+    min-height: 130vh;
     padding-top: 35px;
   }
 
@@ -185,6 +185,7 @@
     flex-direction: column;
     border: 1px solid #ccc;
     border-radius: 20px;
+    padding-bottom: 5%;
   }
 
   .proposals-index__row {
