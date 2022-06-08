@@ -22,6 +22,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @participants = Participant.where(activity_id: @activity.id)
+    @update = true
   end
 
   def create
