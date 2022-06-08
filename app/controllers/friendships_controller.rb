@@ -6,6 +6,11 @@ class FriendshipsController < ApplicationController
     @taking_part = current_user.participant_ids
   end
 
+  def create
+    @friendship = Friendship.new(asker_id: current_user.id, receiver_id: params[:receiver_id])
+    @friendship.save!
+    redirect_to friendships_path
+  end
   def show; end
 
   def destroy
