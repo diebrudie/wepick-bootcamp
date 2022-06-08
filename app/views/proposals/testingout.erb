@@ -1,0 +1,18 @@
+    <div class="form-prop">
+      <%= simple_form_for([@activity, @proposal]) do |a| %>
+        <div class="form-prop__input">
+          <div class="form-prop__label">Title</div>
+          <%= a.input_field :title, class: "form-prop__field is--title" %>
+        </div>
+        <div class="form-prop__input">
+          <div class="form-prop__label">Description</div>
+          <%= a.rich_text_area :description, class: "d-flex" %>
+        </div>
+        <%= a.button :submit, "Submit", class: "top-elements__btn is--proposal-done w-inline-block" %>
+      <% end %>
+    </div>
+    <% if @proposal.id %>
+      <%= link_to "Delete Proposal", proposal_path(@proposal), class: "general__delete-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete your proposal?" } %>
+    <% end %>
+  </div>
+</div>

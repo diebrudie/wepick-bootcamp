@@ -106,4 +106,9 @@
     justify-content: start;
     width: 90%;
   }
+
+  .friends__box.is--add-participant {
+    border-top: 0;
+    border-bottom: 0.1px solid #bec8d7;
+  }
 }
