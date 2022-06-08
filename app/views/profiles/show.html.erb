@@ -73,7 +73,7 @@
               </div>
               <div class="activities__content-wrp">
                 <div class="activities__title"><%= activity.title %></div>
-                <div class="activities__date"><%= activity.activity_date %></div>
+                <div class="activities__date"><%= activity.activity_date.strftime('%A, %d %B %Y') %></div>
               </div>
             </div>
           </div>
