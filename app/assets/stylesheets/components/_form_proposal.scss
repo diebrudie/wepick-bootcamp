@@ -70,6 +70,7 @@
 
   #trix-toolbar-1 {
     white-space: normal !important;
+    width: 100%;
   }
 
   .trix-button--icon-heading-1 {
@@ -83,5 +84,19 @@
 
   trix-toolbar .trix-button-group button.trix-button--icon-bold::before {
     background-image: none;
+  }
+
+  trix-toolbar .trix-button-row {
+    justify-content: start;
+  }
+
+  trix-button .trix-button--icon .trix-button--icon-bold {
+    min-height: 100px;
+    min-width: 100px;
+  }
+
+  trix-button > button {
+    min-height: 50px;
+    min-width: 50px;
   }
 }
