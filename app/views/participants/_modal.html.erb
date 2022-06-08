@@ -17,7 +17,7 @@
                 <div class="friends__title"><%= friend.first_name %></div>
               </div>
             </div>
-            <%= link_to image_tag("icon-plus-purple.svg", alt: "add participant", class: "participants__add-remove", loading: "lazy"), new_activity_participant_path(activity, participant), data: {turbo_method: :post}, class: "participants__add-remove-wrp" %>
+            <%= link_to image_tag("icon-plus-purple.svg", alt: "add participant", class: "participants__add-remove", loading: "lazy"), activity_participants_path(@activity, @participant, user: friend), data: {turbo_method: :post}, class: "participants__add-remove-wrp" %>
           </div>
         <% end %>
       </div>
