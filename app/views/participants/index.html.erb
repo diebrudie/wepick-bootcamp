@@ -30,6 +30,7 @@
                 Total activities from <%= participant.user.username %>
               <br>
               </div>
+              <%= link_to "delete", participant_path(participant), data: {turbo_method: :delete}%>
             </div>
         <% end %>
         <% end %>
@@ -37,6 +38,7 @@
     </div>
   </div>
 </section>
+
 
 
 <nav class="nav">
