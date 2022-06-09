@@ -50,7 +50,7 @@
   }
 
   .top-elements__back-done.is--activity-show {
-    margin-bottom: 3em;
+    margin-bottom: 1.47em;
   }
 
   .top-elements__btn-left.is--back-activity-show {
@@ -277,4 +277,11 @@
     font-size: 20px;
   }
 
+  .modal-content {
+    max-height: 80vh;
+  }
+
+  .modal-body {
+    overflow: scroll;
+  }
 }

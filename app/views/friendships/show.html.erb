@@ -20,7 +20,7 @@
             <div>Add friend to an Activity</div>
           </a>
         </div>
-        <div class="friend-profile__title">Groups in common</div>
+        <div class="friend-profile__title">Activities in common</div>
         <div class="friend-profile__activities-index">
           <div class="activities__box">
             <div class="activities__img-wrp">
@@ -32,8 +32,8 @@
           </div>
         </div>
       </div>
-      <a href="#" class="general__delete-btn w-inline-block">
-        <div>Remove friend</div>
-      </a>
+
+        <%#= link_to "Remove friend", friendship_delete_path(@friendship), class: "general__delete-btn", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <%= link_to "Remove friend now", friendship_path(@friendship), class: "profile__delete-btn" %>
     </div>
   </section>

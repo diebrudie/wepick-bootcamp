@@ -2,27 +2,32 @@
   <div class="l-container is--min-100vh">
     <div class="index-friends">
       <div class="top-elements">
-        <div class="top-elements__back-done">
+        <div class="top-elements__back-done" data-controller="participants">
             <%= link_to image_tag("icon-arrow-back-black.svg", alt: "back button", class: "top-elements__icon", loading: "lazy"), activity_path(@activity), class: "top-elements__btn-left is--back-arrow w-inline-block" %>
-            <%= link_to image_tag("icon-invite-friend-thin.png", alt: "add participant", class: "top-elements__btn-icon invite-friend", loading: "lazy"), new_activity_participant_path(@activity), class: "top-elements__btn is--friend-invite" %>
+            <a href="#" class="top-elements__btn is--friend-invite" data-bs-toggle="modal" data-bs-target="#add_participant">
+              <%= image_tag("icon-invite-friend-thin.png", alt: "add participant", class: "top-elements__btn-icon invite-friend", loading: "lazy") %>
+            </a>
+            <%#= link_to image_tag("icon-invite-friend-thin.png", alt: "add participant", class: "top-elements__btn-icon invite-friend", loading: "lazy"), new_activity_participant_path(@activity), class: "top-elements__btn is--friend-invite" %>
         </div>
         <div class="top-elements__title">Participants</div>
       </div>
     <div class="friends">
+
       <% @participants.each do |participant| %>
         <div class="friends__box">
-          <%= link_to profile_path(participant.user.id), class: "participants__content-wrp" do %>
+          <div class="participants__content-wrp">
             <div class="friends__img-wrp">
               <%= cl_image_tag(participant.user.photo.key, alt: "friend profile image", class: "friends__img", loading: "lazy") %>
             </div>
             <div class="friends__title"><%= participant.user.first_name %></div>
+          </div>
+          <% if current_user == @activity.user %>
+            <%= link_to image_tag("icon-minus-remove-grey.svg", alt: "remove participant", class: "participants__add-remove", loading: "lazy"), participant_path(participant), data: {turbo_method: :delete}, class: "participants__add-remove-wrp" %>
           <% end %>
-            <%  if current_user == @activity.user %>
-              <%= link_to image_tag("icon-minus-remove-grey.svg", alt: "remove participant", class: "participants__add-remove", loading: "lazy"), participant_path(participant), data: {turbo_method: :delete}, class: "participants__add-remove-wrp" %>
-            <% end %>
         </div>
         <% end %>
       </div>
     </div>
   </div>
 </section>
+<%= render "modal", activity: @activity, friends: @friends, participant: @participant %>

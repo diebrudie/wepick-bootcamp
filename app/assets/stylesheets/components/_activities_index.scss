@@ -12,6 +12,10 @@
     flex-direction: column;
   }
 
+  .l-container.is--activity-index {
+    padding-bottom: 15%;
+  }
+
   .activities__box {
     position: relative;
     display: flex;

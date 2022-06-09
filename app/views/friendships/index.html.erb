@@ -10,17 +10,18 @@
  <% end %>
 
 <section class="section">
-  <div class="l-container is--min-100vh">
+  <div class="l-container is--min-100vh is--friends-index">
     <div class="index-friends">
       <div class="top-elements">
         <div class="top-elements__back-done">
           <a href="#" class="top-elements__btn-left w-inline-block">
             <%= image_tag "icon-search-black.svg", alt: "search friends", class: "top-elements__btn-icon search-friends", loading: "lazy" %>
           </a>
-          <a href="#" class="top-elements__btn is--friend-invite w-inline-block">
+          <%= link_to profiles_path, class: "top-elements__btn is--friend-invite w-inline-block" do %>
             <%= image_tag "icon-invite-friend-thin.png", alt: "invite friends", class: "top-elements__btn-icon invite-friend", loading: "lazy" %>
             <div class="top-elements__btn-text is--invite-friends"></div>
-          </a>
+          <% end %>
+
         </div>
         <div class="top-elements__title">Friends</div>
       </div>

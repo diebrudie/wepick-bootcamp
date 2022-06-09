@@ -1,16 +1,24 @@
 class FriendshipsController < ApplicationController
-  before_action :find_friendship, only: %i[show destroy]
+  before_action :find_friendship, only: %i[show]
 
   def index
     @friendships = Friendship.where(asker: current_user).or(Friendship.where(receiver: current_user))
     @taking_part = current_user.participant_ids
   end
 
+  def create
+    @friendship = Friendship.new(asker_id: current_user.id, receiver_id: params[:receiver_id])
+    @friendship.save!
+    redirect_to friendships_path
+  end
   def show; end
 
   def destroy
+    @friend = User.find(params[:id])
+    @friendship = Friendship.find_by(receiver_id: @friend) # .or.find_by(asker_id: @friend)
+
     @friendship.destroy
-    redirect_to friendship_path(@friendship), status: :see_other
+    redirect_to friendships_path, status: :see_other
   end
 
   private

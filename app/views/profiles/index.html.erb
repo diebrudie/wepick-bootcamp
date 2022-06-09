@@ -1,3 +1,5 @@
 <% @users.each do |user| %>
-  <%= user.first_name %>
+  <ul>
+    <li><%= user.first_name %> <%= button_to "+", friendships_path(receiver_id: user.id ) %></li>
+  </ul>
 <% end %>
