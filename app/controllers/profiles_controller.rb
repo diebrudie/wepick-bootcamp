@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   def show
-    @user = User.find(params[:id])  # Mario/profile
+    @user = User.find(params[:id])  # Mario/profileee
     @taking_part = current_user.participant_ids
     @activities_my = Activity.joins(:participants).where(participants: { user_id: current_user.id })
     @activities_his = Activity.joins(:participants).where(participants: { user_id: @user.id })
