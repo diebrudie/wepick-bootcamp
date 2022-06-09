@@ -70,21 +70,40 @@
 
   #trix-toolbar-1 {
     white-space: normal !important;
-    width: 100%;
+    width: 110%;
   }
 
-  // .trix-button--icon-heading-1 {
-  //   display: none;
+  #trix-toolbar-2 {
+    white-space: normal !important;
+    width: 110%;
+  }
+
+  // // .trix-button--icon-heading-1 {
+  // //   display: none;
+  // // }
+
+  // // trix-toolbar .trix-button-group button {
+  // //   background-color: white;
+  // //   border: 1 solid #dce2ea;
+  // // }
+
+  // // trix-toolbar .trix-button-group button.trix-button--icon-bold::before {
+  // //   background-image: none;
+  // // }
+
+  trix-toolbar .trix-button-group button {
+  //   // background-color:$purple-main;
+  //   // border-radius: 5px;
+  //   // margin-right: 1.5px;
+  }
+
+  // trix-toolbar .trix-button-group {
+  //   // border: none;
   // }
 
-  // trix-toolbar .trix-button-group button {
-  //   background-color: white;
-  //   border: 1 solid #dce2ea;
-  // }
-
-  // trix-toolbar .trix-button-group button.trix-button--icon-bold::before {
-  //   background-image: none;
-  // }
+  .trix-button-row .trix-button-group .trix-button-group--history-tools {
+    display: none;
+  }
 
   trix-toolbar .trix-button-row {
     justify-content: space-between;
@@ -96,16 +115,20 @@
   opacity: 0.8;
   }
 
-  trix-toolbar .trix-button--icon-bold::before {
-  background-color: $purple-main;
-  }
+  // trix-toolbar .trix-button--icon-bold::before {
+  // background-color: $purple-main;
+  //  }
 
-  trix-toolbar .trix-button--icon-italic {
-    background-color: white;
-  }
+  // trix-toolbar .trix-button--icon-italic {
+  //   background-color: white;
+  // }
 
   .trix-button--icon-undo {
-    display: none;
-  }
+   display: none;
+   }
+
+  .trix-button--icon-redo {
+   display: none;
+   }
 
 }
