@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   def show
-    @user = User.find(params[:id])  # Mario/profileee
+    @user = User.find(params[:id])
     @taking_part = current_user.participant_ids
     @activities_my = Activity.joins(:participants).where(participants: { user_id: current_user.id })
     @activities_his = Activity.joins(:participants).where(participants: { user_id: @user.id })
@@ -14,6 +14,6 @@ class ProfilesController < ApplicationController
     @myself = [current_user.id]
     @friends_ids = @asker_ids + @receiver_ids
     @everybody_ids = User.all.map(&:id)
-    @no_friends = User.where(id: @everybody_ids - @friends_ids -@myself)
+    @no_friends = User.where(id: @everybody_ids - @friends_ids - @myself)
   end
 end

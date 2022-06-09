@@ -8,23 +8,20 @@
           Users in Berlin
       </div>
     </div>
-
-    <div class="modal-body">
-      <% @no_friends.each do |no_friend| %>
-        <div class="friends__box is--add-participant">
-          <div class="participants__content-wrp">
-            <div class="friends__img-wrp">
-              <%= cl_image_tag(no_friend.photo.key, alt: "friend profile image", class: "friends__img", loading: "lazy") %>
-            </div>
-            <div class="friends__content-wrp">
-              <div class="friends__title"><%= no_friend.first_name %></div>
-            </div>
+    <% @no_friends.each do |no_friend| %>
+      <div class="friends__box is--add-participant">
+        <div class="participants__content-wrp">
+          <div class="friends__img-wrp">
+            <%= cl_image_tag(no_friend.photo.key, alt: "friend profile image", class: "friends__img", loading: "lazy") %>
           </div>
-          <%= link_to friends_path(receiver_id: no_friend.id), data: {turbo_method: :post}, class: "participants__add-remove-wrp" do %>
-            <%= image_tag("icon-plus-purple.svg", alt: "add friend", class: "participants__add-remove", loading: "lazy") %>
-          <% end %>
+          <div class="friends__content-wrp">
+            <div class="friends__title"><%= no_friend.first_name %></div>
+          </div>
         </div>
-      <% end %>
-    </div>
+        <%= link_to friends_path(receiver_id: no_friend.id), data: {turbo_method: :post}, class: "participants__add-remove-wrp" do %>
+          <%= image_tag("icon-plus-purple.svg", alt: "add friend", class: "participants__add-remove", loading: "lazy") %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </section>

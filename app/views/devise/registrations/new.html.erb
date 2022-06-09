@@ -26,9 +26,8 @@
           <%= f.input :confirm_password,
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
-          <%= f.label :picture %>
-          <%= f.input :photo, as: :file, class: "form-act__img-circle", label: false %>
-          <%= image_tag "icon-camera-01.svg", alt: "image upload", loading: "lazy" %>
+          <%#= f.label :picture %>
+          <%= f.input :photo, as: :file, required: true, class: "form-act__img-circle" %>
         </div>
         <br></br>
 

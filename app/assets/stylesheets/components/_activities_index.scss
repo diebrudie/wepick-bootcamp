@@ -29,6 +29,11 @@
     border-bottom: 0.5px solid #a5a5a5;
   }
 
+  .activities__box:active,
+  .activities__box:visited {
+    color: #020202;
+  }
+
   .activities__img-wrp {
     position: relative;
     display: flex;
