@@ -3,10 +3,11 @@
     display: flex;
     overflow: hidden;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     text-align: center;
     min-height: 100vh;
+    padding-top: 12%;
   }
 
   .home__h1 {
@@ -43,9 +44,9 @@
     padding-bottom: 12px;
     border-style: solid;
     border-width: 1.5px;
-    border-color: #33329a;
+    border-color: $purple-main;
     border-radius: 6px;
-    background-color: #493abb;
+    background-color: $purple-main;
     transition: all 200ms ease;
     color: #fff;
     font-size: 14px;
