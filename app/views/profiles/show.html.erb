@@ -57,12 +57,14 @@
           <div class="friend-profile__name"><%= @user.first_name %> <%= @user.last_name %></div>
           <div class="friend-profile__username">@<%= @user.username %></div>
         </div>
-        <div class="friend-profile__btns">
-          <a href="#" class="friend-profile__btn w-inline-block">
+        <div class="friend-profile__btns" data-controller="users">
+          <div class="friend-profile__btn w-inline-block"  data-bs-toggle="modal" data-bs-target="#add_participant2activity">
             <div>Invite to an Activity</div>
-          </a>
+          </div>
         </div>
-        <div class="friend-profile__title">Activities in common</div>
+        <div class="friend-profile__title">
+          Activities in common
+        </div>
 
         <% @activities_together.each do |activity| %>
           <div class="friend-profile__activities-index">
@@ -85,3 +87,5 @@
     </div>
   </section>
 <% end %>
+
+<%= render "modal", activities: @activities %>

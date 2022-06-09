@@ -19,5 +19,8 @@ application.register("proposal-form", ProposalFormController)
 import RefreshListController from "./refresh_list_controller.js"
 application.register("refresh-list", RefreshListController)
 
+import UsersController from "./users_controller.js"
+application.register("users", UsersController)
+
 import VotesController from "./votes_controller.js"
 application.register("votes", VotesController)
