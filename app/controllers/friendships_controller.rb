@@ -15,9 +15,13 @@ class FriendshipsController < ApplicationController
 
   def destroy
     @friend = User.find(params[:id])
-    @friendship = Friendship.find_by(receiver_id: @friend) # .or.find_by(asker_id: @friend)
-
+    if Friendship.find_by(asker_id: current_user.id, receiver_id: @friend.id).present?
+      @friendship = Friendship.find_by(asker_id: current_user.id, receiver_id: @friend.id)
+    else
+      @friendship = Friendship.find_by(asker_id: @friend.id, receiver_id: current_user.id)
+    end
     @friendship.destroy
+
     redirect_to friendships_path, status: :see_other
   end
 

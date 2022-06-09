@@ -612,44 +612,44 @@ friendship1.asker_id = 1
 friendship1.receiver_id = 5
 friendship1.save
 
-friendship1 = Friendship.new
-friendship1.asker_id = 2
-friendship1.receiver_id = 5
-friendship1.save
-
-friendship1 = Friendship.new
-friendship1.asker_id = 3
-friendship1.receiver_id = 5
-friendship1.save
-
-friendship1 = Friendship.new
-friendship1.asker_id = 1
-friendship1.receiver_id = 2
-friendship1.save
-
 friendship2 = Friendship.new
-friendship2.asker_id = 1
-friendship2.receiver_id = 3
+friendship2.asker_id = 2
+friendship2.receiver_id = 5
 friendship2.save
 
 friendship3 = Friendship.new
-friendship3.asker_id = 1
-friendship3.receiver_id = 4
+friendship3.asker_id = 3
+friendship3.receiver_id = 5
 friendship3.save
 
 friendship4 = Friendship.new
-friendship4.asker_id = 2
-friendship4.receiver_id = 3
+friendship4.asker_id = 1
+friendship4.receiver_id = 2
 friendship4.save
 
 friendship5 = Friendship.new
-friendship5.asker_id = 2
-friendship5.receiver_id = 4
+friendship5.asker_id = 1
+friendship5.receiver_id = 3
 friendship5.save
 
 friendship6 = Friendship.new
-friendship6.asker_id = 3
+friendship6.asker_id = 1
 friendship6.receiver_id = 4
 friendship6.save
+
+friendship7 = Friendship.new
+friendship7.asker_id = 2
+friendship7.receiver_id = 3
+friendship7.save
+
+friendship8 = Friendship.new
+friendship8.asker_id = 2
+friendship8.receiver_id = 4
+friendship8.save
+
+friendship9 = Friendship.new
+friendship9.asker_id = 3
+friendship9.receiver_id = 4
+friendship9.save
 
 puts "Finished creating friendships!"
