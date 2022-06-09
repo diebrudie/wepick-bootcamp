@@ -88,16 +88,24 @@
 
   trix-toolbar .trix-button-row {
     justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  trix-toolbar .trix-button--icon::before {
+  opacity: 0.8;
   }
 
   trix-toolbar .trix-button--icon-bold::before {
   background-color: $purple-main;
-  // min-height: 120px;
-  // min-width: 120px;
   }
 
   trix-toolbar .trix-button--icon-italic {
-    background-color: blueviolet;
+    background-color: white;
+  }
+
+  .trix-button--icon-undo {
+    display: none;
   }
 
 }
