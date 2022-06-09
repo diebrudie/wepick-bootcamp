@@ -17,7 +17,6 @@ class ActivitiesController < ApplicationController
       format.html # Follow regular flow of Rails
       format.text { render partial: 'list', locals: { activities: @activities_user, participants_user: @participants_user }, formats: :html }
     end
-
   end
 
   def show
