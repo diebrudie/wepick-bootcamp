@@ -15,7 +15,7 @@ class ProposalsController < ApplicationController
     @proposal.activity = @activity
     @proposal.user = current_user
     @proposal.save!
-    redirect_to activity_path(@activity)
+    redirect_to activity_proposal_path(@activity, @proposal)
   end
 
   def destroy
