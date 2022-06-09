@@ -19,7 +19,7 @@
       <%= simple_form_for activity do |a| %>
         <div class="form-act__img-n-name">
           <div class="form-act__img-circle">
-            <%= a.input :photo, as: :file, class: "form-act__img-circle", label: false %>
+            <%= a.input :photo, as: :file, label: false %>
             <%= image_tag "icon-camera-01.svg", alt: "image upload", loading: "lazy" %>
           </div>
           <div class="form-act__name">
