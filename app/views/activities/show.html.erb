@@ -25,7 +25,7 @@
       <div class="activity-show__details">
         <div class="top-elements__title is--activity-show"><%= @activity.title %></div>
         <div class="activity-show__flex-wrp">
-          <div class="activity-show__happening">Created by @<%= @activity.user.username %></div>
+          <div class="activity-show__happening">Happening on <%= @activity.activity_date.strftime('%d %b %Y') %></div>
           <a href="#" class="activity-show__participants w-inline-blo%ck">
             <%= link_to "#{@participants.count} participants", activity_participants_path(@activity), class: "activity-show__participants-text" %>
           </a>
