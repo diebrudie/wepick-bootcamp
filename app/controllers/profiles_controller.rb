@@ -8,6 +8,12 @@ class ProfilesController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @asker_ids = Friendship.where(asker_id: current_user).map(&:receiver_id)
+    @receiver_ids = Friendship.where(receiver_id: current_user).map(&:asker_id)
+    @myself = [current_user.id]
+    @friends_ids = @asker_ids + @receiver_ids
+    @everybody_ids = User.all.map(&:id)
+    @no_friends= User.where(id: @everybody_ids - @friends_ids -@myself)
   end
+
 end
