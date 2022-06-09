@@ -1,5 +1,30 @@
-<% @no_friends.each do |no_friend| %>
-  <ul>
-    <li><%= no_friend.first_name %> <%= button_to "+", friendships_path(receiver_id: no_friend.id ) %></li>
-  </ul>
-<% end %>
+<section class="section">
+  <div class="l-container">
+    <div class="top-elements">
+      <div class="top-elements__back-done">
+        <%= link_to image_tag("icon-arrow-back-black.svg", alt: "back button", class: "top-elements__icon", loading: "lazy"), friendships_path(@user), class: "top-elements__btn-left is--back-arrow w-inline-block" %>
+      </div>
+      <div class="top-elements__title">
+          Users in Berlin
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <% @no_friends.each do |no_friend| %>
+        <div class="friends__box is--add-participant">
+          <div class="participants__content-wrp">
+            <div class="friends__img-wrp">
+              <%= cl_image_tag(no_friend.photo.key, alt: "friend profile image", class: "friends__img", loading: "lazy") %>
+            </div>
+            <div class="friends__content-wrp">
+              <div class="friends__title"><%= no_friend.first_name %></div>
+            </div>
+          </div>
+          <%= link_to friends_path(receiver_id: no_friend.id), data: {turbo_method: :post}, class: "participants__add-remove-wrp" do %>
+            <%= image_tag("icon-plus-purple.svg", alt: "add friend", class: "participants__add-remove", loading: "lazy") %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
