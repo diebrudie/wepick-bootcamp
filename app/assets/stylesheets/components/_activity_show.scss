@@ -277,4 +277,11 @@
     font-size: 20px;
   }
 
+  .modal-content {
+    max-height: 80vh;
+  }
+
+  .modal-body {
+    overflow: scroll;
+  }
 }
