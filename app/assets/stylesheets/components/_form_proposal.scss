@@ -73,26 +73,31 @@
     width: 100%;
   }
 
-  .trix-button--icon-heading-1 {
-    display: none;
-  }
+  // .trix-button--icon-heading-1 {
+  //   display: none;
+  // }
 
-  trix-toolbar .trix-button-group button {
-    background-color: white;
-    border: 1 solid #dce2ea;
-  }
+  // trix-toolbar .trix-button-group button {
+  //   background-color: white;
+  //   border: 1 solid #dce2ea;
+  // }
 
-  trix-toolbar .trix-button-group button.trix-button--icon-bold::before {
-    background-image: none;
-  }
+  // trix-toolbar .trix-button-group button.trix-button--icon-bold::before {
+  //   background-image: none;
+  // }
 
   trix-toolbar .trix-button-row {
-    justify-content: start;
+    justify-content: space-between;
   }
 
-  trix-button .trix-button--icon .trix-button--icon-bold {
-    min-height: 120px;
-    min-width: 120px;
+  trix-toolbar .trix-button--icon-bold::before {
+  background-color: $purple-main;
+  // min-height: 120px;
+  // min-width: 120px;
+  }
+
+  trix-toolbar .trix-button--icon-italic {
+    background-color: blueviolet;
   }
 
 }
