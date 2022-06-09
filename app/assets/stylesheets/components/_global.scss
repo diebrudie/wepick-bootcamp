@@ -77,6 +77,7 @@ h6 {
   display: none;
 }
 
+
 @media screen and (max-width: 479px) {
   body {
    font-size: 12px;
@@ -124,6 +125,7 @@ h6 {
 
   a, a:hover, a:active, a:visited {
     cursor: pointer !important;
+    color: inherit !important;
   }
 
   .l-container {
