@@ -15,10 +15,14 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
+
   validates :username, presence: { strict: true }, uniqueness: { case_sensitive: false }, length: { in: 6..20 }
   validates :email, presence: { strict: true }, uniqueness: { case_sensitive: false }, length: { in: 6..20 }
   validates :first_name, presence: { strict: true }
   validates :last_name, presence: { strict: true }
+  validates :photo, attached: true
+
+
 
   def part_of(user_one, user_two)
     x = user_one.activity_ids
@@ -26,5 +30,6 @@ class User < ApplicationRecord
     z = x & y # => [2, 4]
     z.count
   end
+
 
 end

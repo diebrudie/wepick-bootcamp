@@ -16,7 +16,7 @@ class Activity < ApplicationRecord
   validates :deadline_date, presence: { strict: true }
   validate :deadline_before_activity?
   validate :activity_in_future?
-
+  validates :photo, attached: true
   def activity_in_future?
     errors.add(:activity_date, "Your activity must take place on a date in the future!") unless (activity_date - Date.today).positive?
   end
