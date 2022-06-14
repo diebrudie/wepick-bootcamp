@@ -5,6 +5,6 @@ class Proposal < ApplicationRecord
   has_rich_text :description
   has_many :votes, dependent: :destroy
 
-  validates :title, presence: { strict: true }, length: { maximum: 30 }
-  validates :description, presence: { strict: true }
+  validates :title, presence: true, length: { maximum: 30 }
+  validates :description, presence: true
 end

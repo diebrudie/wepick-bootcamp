@@ -8,12 +8,12 @@ class Activity < ApplicationRecord
   has_one_attached :photo
 
 
-  validates :title, presence: { strict: true }, length: { maximum: 30 }
-  validates :activity_type, presence: { strict: true }
+  validates :title, presence: true, length: { maximum: 30 }
+  validates :activity_type, presence: true
   validates :activity_type, inclusion: { in: ACTIVITY_TYPE }
-  validates :description, presence: { strict: true }, length: { maximum: 175 }
-  validates :activity_date, presence: { strict: true }
-  validates :deadline_date, presence: { strict: true }
+  validates :description, presence: true, length: { maximum: 175 }
+  validates :activity_date, presence: true
+  validates :deadline_date, presence: true
   validate :deadline_before_activity?
   validate :activity_in_future?
   validates :photo, attached: true
